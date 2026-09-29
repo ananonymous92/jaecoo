@@ -1,0 +1,199 @@
+/* Super Hybrid System Section */
+.shs-section {
+  background-color: #050505;
+  color: var(--color-white);
+  padding: 8rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.shs-section::before {
+  content: '';
+  position: absolute;
+  top: -20%;
+  right: -10%;
+  width: 60%;
+  height: 80%;
+  background: radial-gradient(ellipse at center, rgba(0, 210, 196, 0.08) 0%, rgba(5, 5, 5, 0) 70%);
+  pointer-events: none;
+}
+
+/* SHS Interactive Diagram */
+.shs-diagram-container {
+  margin: 4rem 0;
+  position: relative;
+  background: var(--color-surface-1);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-xl);
+  padding: 3rem;
+}
+
+.shs-diagram-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  align-items: center;
+  position: relative;
+}
+
+/* Energy Flow Lines (SVG/CSS) */
+.energy-flow-lines {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+.energy-particle {
+  position: absolute;
+  top: -2px;
+  left: 0;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-accent-cyan);
+  box-shadow: 0 0 10px var(--color-accent-cyan);
+  animation: flowParticle 3s infinite linear;
+}
+
+@keyframes flowParticle {
+  0% { left: 0; opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { left: 100%; opacity: 0; }
+}
+
+.shs-node {
+  background: var(--color-surface-2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  transition: all var(--transition-smooth);
+}
+
+.shs-node:hover {
+  border-color: var(--color-accent-cyan);
+  box-shadow: var(--shadow-glow);
+  transform: translateY(-5px);
+}
+
+.shs-node-icon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 1.5rem;
+  color: var(--color-white);
+  transition: color var(--transition-fast);
+}
+
+.shs-node:hover .shs-node-icon {
+  color: var(--color-accent-cyan);
+}
+
+.shs-node-title {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+}
+
+.shs-node-desc {
+  font-size: 0.9rem;
+  color: var(--color-soft-gray);
+}
+
+/* SHS Modes Cards */
+.shs-modes-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 4rem;
+}
+
+.shs-mode-card {
+  background: transparent;
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-md);
+  padding: 2.5rem 2rem;
+  transition: all var(--transition-smooth);
+  position: relative;
+  overflow: hidden;
+}
+
+.shs-mode-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--color-border-light);
+  transition: background var(--transition-smooth);
+}
+
+.shs-mode-card:hover {
+  background: var(--color-surface-1);
+}
+
+.shs-mode-card:hover::before {
+  background: var(--color-accent-cyan);
+}
+
+.shs-mode-number {
+  font-family: var(--font-heading);
+  font-size: 3rem;
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.05);
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  line-height: 1;
+}
+
+.shs-mode-card:hover .shs-mode-number {
+  color: rgba(0, 210, 196, 0.1);
+}
+
+.shs-mode-title {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  position: relative;
+  z-index: 2;
+}
+
+.shs-mode-desc {
+  color: var(--color-soft-gray);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  position: relative;
+  z-index: 2;
+}
+
+@media (max-width: 992px) {
+  .shs-diagram-grid, .shs-modes-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .energy-flow-lines {
+    width: 2px;
+    height: 100%;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+  }
+  @keyframes flowParticle {
+    0% { top: 0; opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { top: 100%; opacity: 0; }
+  }
+}

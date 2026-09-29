@@ -1,0 +1,276 @@
+[
+  {
+    "id": "jaecoo-j5-ev",
+    "slug": "jaecoo-j5-ev",
+    "name": "JAECOO J5 EV",
+    "category": "SUV Electric",
+    "tagline": "This is The Real SUV",
+    "shortDesc": "SUV listrik murni berkarakter tangguh yang menggabungkan mobilitas ramah lingkungan, desain boxy modern, dan kecerdasan kokpit masa depan.",
+    "price": "Mulai Rp 420.000.000 (Est.)",
+    "heroImage": "/images/upload-1790583548209-858550571.avif",
+    "cardImage": "/images/upload-1790583566030-385737399.png",
+    "badge": "100% PURE ELECTRIC",
+    "powertrain": "Permanent Magnet Synchronous Motor",
+    "specs": {
+      "power": "155kW",
+      "torque": "288N.m",
+      "battery": "60.9 kWh Blade Battery",
+      "evRange": "420 km (CLTC)",
+      "drivingRange": "420 km",
+      "acceleration": "0-100 km/h dalam 7.6 detik",
+      "driveSystem": "Front-Wheel Drive (FWD)",
+      "groundClearance": "200mm",
+      "wadingDepth": "450mm",
+      "chargingTime": "DC Fast Charging (30% - 80% dalam 28 menit)",
+      "energyEfficiency": "13.8 kWh / 100 km"
+    },
+    "colors": [
+      {
+        "name": "Khaki White",
+        "hex": "#f4f4f2",
+        "img": "/images/upload-1790589990124-118415544.png"
+      },
+      {
+        "name": "Forest Olive Green",
+        "hex": "#2e3b32",
+        "img": "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?auto=format&fit=crop&w=1200&q=85"
+      },
+      {
+        "name": "Carbon Crystal Black",
+        "hex": "#141416",
+        "img": "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=85"
+      },
+      {
+        "name": "Cyber Ice Cyan",
+        "hex": "#008e9b",
+        "img": "https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?auto=format&fit=crop&w=1200&q=85"
+      }
+    ],
+    "trims": [
+      {
+        "name": "J5 Standard",
+        "img": "https://freepngimg.com/thumb/car/3-2-car-free-download-png-thumb.png",
+        "price": "IDR 279.900.000",
+        "features": [
+          "35 in-car storage compartments",
+          "Ground Clearance 200mm",
+          "Max power 155kW"
+        ]
+      },
+      {
+        "name": "J5 Premium",
+        "img": "https://freepngimg.com/thumb/car/3-2-car-free-download-png-thumb.png",
+        "price": "IDR 324.900.000",
+        "features": [
+          "Panoramic Roof 1.45 m2",
+          "13.2\" Full HD Center Display",
+          "Max Power 155kW"
+        ]
+      }
+    ],
+    "keyFeatures": [
+      {
+        "title": "Smart Eco-Cockpit",
+        "desc": "Layar infotainment 13.2 inci terintegrasi Qualcomm Snapdragon 8155 dengan antarmuka futuristik responsif dan voice command AI."
+      },
+      {
+        "title": "BYD Blade Battery 60.9 kWh",
+        "desc": "Teknologi baterai ultra-safe Blade Battery dengan ketahanan thermal superior, siklus hidup lebih panjang, dan garansi 8 tahun."
+      },
+      {
+        "title": "DC Fast Charging",
+        "desc": "Pengisian daya super cepat DC dari 30% ke 80% hanya dalam 28 menit. Mendukung home charging AC 7 kW untuk pengisian semalaman."
+      },
+      {
+        "title": "35 Smart Storage Spaces",
+        "desc": "Desain interior cerdas dengan 35 ruang penyimpanan tersembunyi untuk memaksimalkan kenyamanan dan kerapian kabin."
+      }
+    ],
+    "interiorFeatures": [
+      "Panoramic Sunroof 1.45 m² dengan thermal glass coating anti-UV",
+      "13.2 inch Full HD Center Display + 10.25 inch Digital Instrument Cluster",
+      "Wireless Apple CarPlay & Android Auto terintegrasi",
+      "Jok kulit sintetis premium dengan 6-way electric adjustment"
+    ],
+    "exteriorFeatures": [
+      "Signature LED Matrix Headlamp with Welcome Animation Sequence",
+      "Desain boxy modern dengan ground clearance 200mm kelas SUV",
+      "Velg alloy 18 inch aerodynamic dual-tone design",
+      "Wading depth 450mm untuk kemampuan melewati genangan air"
+    ],
+    "gallery": [
+      "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?auto=format&fit=crop&w=1200&q=85",
+      "https://images.unsplash.com/photo-1558618666-fcd25c85f82e?auto=format&fit=crop&w=1200&q=85",
+      "https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?auto=format&fit=crop&w=1200&q=85",
+      "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=85"
+    ],
+    "hotspots": [],
+    "interiorImage": ""
+  },
+  {
+    "id": "j7-shs-p",
+    "slug": "j7-shs-p",
+    "name": "JAECOO J7 SHS-P",
+    "category": "Premium Plug-in Hybrid SUV",
+    "tagline": "POWER MEETS EFFICIENCY",
+    "shortDesc": "SUV hybrid plug-in premium dengan perpaduan siluet tangguh waterfall grille, teknologi Super Hybrid System generasi ke-5, dan daya jelajah komprehensif lebih dari 1.200 km.",
+    "price": "Mulai Rp 550.000.000 (Est.)",
+    "heroImage": "/images/hero_j7.jpg",
+    "cardImage": "https://freepngimg.com/thumb/car/4-2-car-png-hd-thumb.png",
+    "badge": "SUPER HYBRID SYSTEM (PHEV)",
+    "powertrain": "1.5 TGDI Turbo Hybrid Engine + Dual Electric Motors + DHT",
+    "specs": {
+      "power": "255 kW (342 HP) Combined",
+      "torque": "525 Nm Combined",
+      "battery": "18.3 kWh Dedicated Hybrid Blade Battery",
+      "evRange": "98 km (Pure Electric)",
+      "drivingRange": "> 1.200 km (PHEV Combined)",
+      "acceleration": "0-100 km/h dalam 6.8 detik",
+      "driveSystem": "Intelligent All-Wheel Drive / FWD Optional",
+      "groundClearance": "200 mm",
+      "chargingTime": "DC Fast Charge 30-80% dalam 19 menit | AC Charging 3.5 jam",
+      "energyEfficiency": "4.7 L / 100 km (Baterai kondisi low state)"
+    },
+    "colors": [
+      {
+        "name": "Titanium Dark Gray",
+        "hex": "#32373B",
+        "img": "/images/hero_j7.jpg"
+      },
+      {
+        "name": "Moonlight Silver",
+        "hex": "#C5C7CB",
+        "img": "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=85"
+      },
+      {
+        "name": "Carbon Crystal Black",
+        "hex": "#0E0F11",
+        "img": "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=1200&q=85"
+      },
+      {
+        "name": "Alpine White",
+        "hex": "#EDEDED",
+        "img": "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=1200&q=85"
+      }
+    ],
+    "keyFeatures": [
+      {
+        "title": "Super Hybrid System (SHS)",
+        "desc": "Arsitektur hybrid mutakhir dengan efisiensi termal mesin 44.5%, transisi mulus antara EV mode, HEV paralel, dan regenerasi energi cerdas."
+      },
+      {
+        "title": "14.8-inch Vertical Super Screen",
+        "desc": "Layar sentuh ultra-definisi vertikal dengan Snapdragon 8155, HUD holographic display, dan navigasi satelit 3D."
+      },
+      {
+        "title": "540° Transparent Chassis",
+        "desc": "Kombinasi kamera keliling 360° plus proyeksi bawah sasis secara real-time untuk melihat rintangan jalan dan batu saat off-road."
+      },
+      {
+        "title": "Sony Premium 8-Speaker Audio",
+        "desc": "Tata suara akustik sinematik berpresisi tinggi yang di-tuning khusus oleh insinyur akustik Sony di Jepang."
+      }
+    ],
+    "interiorFeatures": [
+      "Tuas transmisi elektrik bergaya cockpit pesawat tempur",
+      "Jok kulit ventilated dengan pemanas dan pendingin udara",
+      "Double acoustic laminated glass untuk kekedapan kabin kelas sedan mewah",
+      "Coolbox pendingin minuman di bawah armrest konsol tengah"
+    ],
+    "exteriorFeatures": [
+      "Waterfall Vertical Matrix Grille dengan chrome gelap bertekstur",
+      "Hidden Door Handles dengan anti-freezing mechanism",
+      "Split LED Matrix Daytime Running Light bergaya checker flag",
+      "Dual Exhaust Decorative Trim bernuansa sporty futuristik"
+    ],
+    "gallery": [
+      "/images/hero_j7.jpg",
+      "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=85",
+      "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=1200&q=85",
+      "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=1200&q=85"
+    ]
+  },
+  {
+    "id": "j8-shs-p-ardis",
+    "slug": "j8-shs-p-ardis",
+    "name": "JAECOO J8 SHS-P ARDIS",
+    "category": "Premium AWD Super Hybrid SUV",
+    "tagline": "COMMAND EVERY TERRAIN",
+    "shortDesc": "Flagship luxury SUV dengan sistem penggerak cerdas ARDIS (All-Road Drive Intelligent System), suspensi aktif CDC Magnetic Levitation, dan kenyamanan lounge kelas satu.",
+    "price": "Mulai Rp 720.000.000 (Est.)",
+    "heroImage": "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=1920&q=85",
+    "cardImage": "https://freepngimg.com/thumb/car/1-2-car-png-picture-thumb.png",
+    "badge": "FLAGSHIP AWD ARDIS",
+    "powertrain": "2.0 TGDI Turbo Hybrid + Triple Electric Motors + 3DHT All-Wheel Drive",
+    "specs": {
+      "power": "445 kW (597 HP) Combined Max",
+      "torque": "915 Nm Combined Peak",
+      "battery": "34.46 kWh High-Energy Ternary Battery",
+      "evRange": "160 km (Pure Electric)",
+      "drivingRange": "> 1.300 km (Combined Range)",
+      "acceleration": "0-100 km/h dalam 5.4 detik",
+      "driveSystem": "ARDIS Intelligent All-Terrain AWD (7 Driving Modes)",
+      "groundClearance": "215 mm",
+      "chargingTime": "DC Fast Charging 20-80% dalam 20 menit | AC 6.6 kW",
+      "energyEfficiency": "5.8 L / 100 km (WLTC)"
+    },
+    "colors": [
+      {
+        "name": "Graphite Matte Black",
+        "hex": "#1A1B1E",
+        "img": "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=1200&q=85"
+      },
+      {
+        "name": "Nordic Emerald Green",
+        "hex": "#162B26",
+        "img": "https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=1200&q=85"
+      },
+      {
+        "name": "Liquid Silver Metallic",
+        "hex": "#BFC5CB",
+        "img": "https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=1200&q=85"
+      },
+      {
+        "name": "Polar Ice White",
+        "hex": "#F7F8F9",
+        "img": "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=1200&q=85"
+      }
+    ],
+    "keyFeatures": [
+      {
+        "title": "ARDIS All-Road Drive System",
+        "desc": "7 mode adaptif (Mud, Sand, Snow, Rock, Off-road, Sport, Eco) dengan respon pengalihan torsi instan kurang dari 0.1 detik."
+      },
+      {
+        "title": "CDC Magnetic Levitation Suspension",
+        "desc": "Suspensi adaptif membaca kontur jalan 100 kali per detik untuk meredam goncangan layaknya karpet terbang."
+      },
+      {
+        "title": "First-Class Queen Passenger Seat",
+        "desc": "Kursi penumpang depan zero-gravity elektrik dengan sandaran kaki terintegrasi, 8 mode pijat, dan pemanas/pendingin."
+      },
+      {
+        "title": "Sony 14-Speaker Soundstage",
+        "desc": "Speaker headrest mandiri untuk navigasi pengemudi tanpa mengganggu musik penumpang kabin."
+      }
+    ],
+    "interiorFeatures": [
+      "Layar ganda 24.6 inci Curved Horizon Display beresolusi 4K",
+      "Bahan kulit Nappa perforated asli dengan aksen kayu open-pore matte",
+      "Sistem parfum kabin aromaterapi 3 aroma terintegrasi AC ionizer",
+      "Kaca privasi belakang dan tirai jendela elektrik terintegrasi"
+    ],
+    "exteriorFeatures": [
+      "Active Air Intake Grille dengan shutter aerodinamis otomatis",
+      "Lampu proyektor Matrix Cyber-Light dengan resolusi 1.3 juta mikro-cermin",
+      "Velg 20-inch Forged Duo-Tone Turbofan Alloy Wheels",
+      "Panoramic Roof seluas 1.4 m² dengan solar heat rejection hingga 99%"
+    ],
+    "gallery": [
+      "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=1200&q=85",
+      "https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=1200&q=85",
+      "https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=1200&q=85",
+      "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=1200&q=85"
+    ]
+  }
+]

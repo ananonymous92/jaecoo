@@ -1,0 +1,292 @@
+/* Models Showcase Section */
+.models-section {
+  background-color: var(--color-deep-black);
+  padding: 8rem 0;
+}
+
+.model-showcase-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.model-card {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--color-surface-1);
+  border: 1px solid var(--color-border-light);
+  transition: all var(--transition-smooth);
+  display: flex;
+  flex-direction: column;
+}
+
+.model-card:hover {
+  transform: translateY(-10px);
+  border-color: rgba(255, 255, 255, 0.15);
+  box-shadow: var(--shadow-card);
+}
+
+.model-card-image-wrap {
+  width: 100%;
+  height: 280px;
+  position: relative;
+  overflow: hidden;
+}
+
+.model-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.model-card:hover .model-card-image {
+  transform: scale(1.05);
+}
+
+.model-card-badge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  z-index: 2;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--color-border-light);
+  padding: 0.4rem 0.8rem;
+  border-radius: var(--radius-full);
+  font-family: var(--font-heading);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: var(--color-white);
+}
+
+.model-card-content {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.model-card-title {
+  font-size: 1.5rem;
+  margin-bottom: 0.25rem;
+  color: var(--color-white);
+}
+
+.model-card-tagline {
+  font-size: 0.85rem;
+  color: var(--color-accent-cyan);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.model-card-specs {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+.spec-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.9rem;
+  color: var(--color-light-gray);
+}
+
+.spec-icon {
+  width: 18px;
+  height: 18px;
+  color: var(--color-muted-gray);
+}
+
+.model-card-price {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-white);
+  margin-bottom: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--color-border-light);
+}
+
+.model-card-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+/* --------------------------------------
+   Dynamic Model Detail View (Full Page)
+-------------------------------------- */
+.model-detail-view {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--color-white);
+  z-index: 2000;
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: none;
+}
+
+.model-detail-view.active {
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.model-page-container {
+  width: 100%;
+}
+
+.model-page-hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.model-page-hero::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.2) 40%, rgba(0,0,0,0.4) 100%);
+  z-index: 1;
+}
+
+.model-hero-content {
+  position: relative;
+  z-index: 2;
+  color: var(--color-white);
+  padding: 0 2rem;
+}
+
+.model-hero-title {
+  font-family: var(--font-heading);
+  font-size: clamp(4rem, 10vw, 8rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.5rem;
+  line-height: 1;
+}
+
+.model-hero-tagline {
+  font-size: clamp(1.2rem, 3vw, 2rem);
+  font-style: italic;
+  margin-bottom: 3rem;
+}
+
+.model-hero-actions {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.btn-pill {
+  border-radius: 50px !important;
+  padding: 0.8rem 2.5rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.1em !important;
+}
+
+.btn-teal {
+  background-color: #008E9B;
+  color: #fff;
+  border: 1px solid #008E9B;
+  transition: all var(--transition-fast);
+}
+
+.btn-teal:hover {
+  background-color: #00707a;
+  border-color: #00707a;
+}
+
+@media (max-width: 768px) {
+  .model-page-hero {
+    height: 85vh;
+    background-attachment: scroll; /* Fix mobile parallax bug */
+  }
+  .model-hero-title {
+    font-size: clamp(2.5rem, 8vw, 4rem) !important;
+  }
+  .model-hero-tagline {
+    font-size: 1rem !important;
+  }
+  .model-hero-actions {
+    flex-direction: column;
+  }
+  /* Specs grid */
+  .model-page-container [style*="grid-template-columns: repeat(auto-fit, minmax(220px"] {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  /* Key features grid */
+  .model-page-container [style*="grid-template-columns: repeat(auto-fit, minmax(260px"] {
+    grid-template-columns: 1fr !important;
+  }
+  /* Interior/Exterior two-column → stack */
+  .model-page-container [style*="grid-template-columns: 1fr 1fr; gap:4rem"] {
+    grid-template-columns: 1fr !important;
+    gap: 3rem !important;
+  }
+  /* Gallery grid */
+  .model-page-container [style*="grid-template-columns: repeat(auto-fit, minmax(280px"] {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.5rem !important;
+  }
+  /* Trims cards */
+  .model-page-container .trim-card {
+    min-width: 100% !important;
+  }
+  /* Scroll indicator hide on mobile */
+  .model-page-hero .scroll-indicator {
+    display: none !important;
+  }
+  /* General padding reduction */
+  .model-page-container [style*="padding: 5rem 0"] {
+    padding: 3rem 0 !important;
+  }
+  .model-page-container .container {
+    padding: 0 1.25rem !important;
+  }
+  /* CTA buttons stack */
+  .model-page-container [style*="display:flex; gap:1rem; justify-content:center"] {
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+  /* Color swatch section padding */
+  .model-page-colors {
+    padding: 3rem 1rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .model-hero-title {
+    font-size: 2.2rem !important;
+  }
+  /* Specs grid 2 col on very small */
+  .model-page-container [style*="grid-template-columns: repeat(auto-fit, minmax(220px"] {
+    grid-template-columns: 1fr 1fr !important;
+  }
+  /* Gallery single column on very small */
+  .model-page-container [style*="grid-template-columns: repeat(auto-fit, minmax(280px"] {
+    grid-template-columns: 1fr !important;
+  }
+  .model-showcase-grid {
+    grid-template-columns: 1fr;
+  }
+}
