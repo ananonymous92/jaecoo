@@ -1,4 +1,15 @@
-export const renderFooter = (t) => {
+export const renderFooter = (t, settings = {}) => {
+  const footerData = settings.footer || {};
+  const address = footerData.address || 'Wisma JAECOO Indonesia<br>Jl. TB Simatupang Kav. 88<br>Jakarta Selatan 12430';
+  const phone = footerData.phone || '1-500-000';
+  const whatsapp = footerData.whatsapp || '+62 811 8800 991';
+  const email = footerData.email || 'customercare@jaecoo.id';
+  
+  const facebook = footerData.facebook || 'https://web.facebook.com/profile.php?id=61584045292756';
+  const instagram = footerData.instagram || 'https://www.instagram.com/jaecootangerangofficial';
+  const youtube = footerData.youtube || 'https://www.youtube.com/@RiriJaecooTangerang';
+  const twitter = footerData.twitter || '#';
+
   const footer = document.getElementById('footer');
   const floatingActions = document.getElementById('floating-actions');
 
@@ -30,19 +41,19 @@ export const renderFooter = (t) => {
           <ul class="footer-contact-list">
             <li class="footer-contact-item">
               <i data-lucide="map-pin" class="footer-contact-icon"></i>
-              <span class="footer-contact-text">Wisma JAECOO Indonesia<br>Jl. TB Simatupang Kav. 88<br>Jakarta Selatan 12430</span>
+              <span class="footer-contact-text">${address}</span>
             </li>
             <li class="footer-contact-item">
               <i data-lucide="phone" class="footer-contact-icon"></i>
-              <span class="footer-contact-text">1-500-000</span>
+              <span class="footer-contact-text">${phone}</span>
             </li>
             <li class="footer-contact-item">
               <i data-lucide="message-circle" class="footer-contact-icon"></i>
-              <span class="footer-contact-text">+62 811 8800 991</span>
+              <span class="footer-contact-text">${whatsapp}</span>
             </li>
             <li class="footer-contact-item">
               <i data-lucide="mail" class="footer-contact-icon"></i>
-              <span class="footer-contact-text">customercare@jaecoo.id</span>
+              <span class="footer-contact-text">${email}</span>
             </li>
           </ul>
         </div>
@@ -51,10 +62,10 @@ export const renderFooter = (t) => {
         <div>
           <h4 class="footer-heading">${t.footer.socialMedia}</h4>
           <div class="footer-socials">
-            <a href="https://www.instagram.com/jaecootangerangofficial?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw==" class="social-btn"><i data-lucide="instagram"></i></a>
-            <a href="https://web.facebook.com/profile.php?id=61584045292756" class="social-btn"><i data-lucide="facebook"></i></a>
-            <a href="https://www.youtube.com/@RiriJaecooTangerang" class="social-btn"><i data-lucide="youtube"></i></a>
-            <a href="#" class="social-btn"><i data-lucide="twitter"></i></a>
+            <a href="${instagram}" class="social-btn" target="_blank"><i data-lucide="instagram"></i></a>
+            <a href="${facebook}" class="social-btn" target="_blank"><i data-lucide="facebook"></i></a>
+            <a href="${youtube}" class="social-btn" target="_blank"><i data-lucide="youtube"></i></a>
+            <a href="${twitter}" class="social-btn" target="_blank"><i data-lucide="twitter"></i></a>
           </div>
         </div>
       </div>

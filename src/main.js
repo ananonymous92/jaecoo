@@ -57,7 +57,7 @@ const renderApp = () => {
   renderBrandIntro(t, data.settings);
   renderDealerLocator(t, data.dealers);
   renderForms(t, data.models, data.dealers);
-  renderFooter(t);
+  renderFooter(t, data.settings);
 
   // Initialize Icons
   createIcons({

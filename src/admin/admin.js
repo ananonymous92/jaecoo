@@ -975,12 +975,67 @@ function renderSettingsView() {
           <div id="video-upload-status" style="margin-top: 10px; font-size: 0.85rem; color: var(--success); display: none;">Video berhasil diunggah!</div>
         </div>
       </div>
+      
+      <h3 class="card-title" style="margin-top: 30px; margin-bottom: 15px; font-size: 1.1rem; border-bottom: 1px solid var(--border-color); padding-bottom: 10px;">Pengaturan Footer (Informasi Kontak & Sosial Media)</h3>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+        <!-- Contact Info -->
+        <div>
+          <h4 style="margin-bottom: 15px; color: var(--text-muted); font-size: 0.9rem;">Informasi Kontak</h4>
+          <div class="form-group">
+            <label class="form-label">Alamat Kantor</label>
+            <textarea id="setting-footer-address" class="form-control" rows="3" placeholder="Gunakan <br> untuk baris baru">${settingsData.footer?.address || 'Wisma JAECOO Indonesia<br>Jl. TB Simatupang Kav. 88<br>Jakarta Selatan 12430'}</textarea>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Nomor Telepon</label>
+            <input type="text" id="setting-footer-phone" class="form-control" value="${settingsData.footer?.phone || '1-500-000'}">
+          </div>
+          <div class="form-group">
+            <label class="form-label">WhatsApp</label>
+            <input type="text" id="setting-footer-whatsapp" class="form-control" value="${settingsData.footer?.whatsapp || '+62 811 8800 991'}">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Email</label>
+            <input type="text" id="setting-footer-email" class="form-control" value="${settingsData.footer?.email || 'customercare@jaecoo.id'}">
+          </div>
+        </div>
+        
+        <!-- Social Media -->
+        <div>
+          <h4 style="margin-bottom: 15px; color: var(--text-muted); font-size: 0.9rem;">Sosial Media (URL)</h4>
+          <div class="form-group">
+            <label class="form-label">Instagram Link</label>
+            <input type="text" id="setting-footer-instagram" class="form-control" value="${settingsData.footer?.instagram || 'https://www.instagram.com/jaecootangerangofficial'}">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Facebook Link</label>
+            <input type="text" id="setting-footer-facebook" class="form-control" value="${settingsData.footer?.facebook || 'https://web.facebook.com/profile.php?id=61584045292756'}">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Youtube Link</label>
+            <input type="text" id="setting-footer-youtube" class="form-control" value="${settingsData.footer?.youtube || 'https://www.youtube.com/@RiriJaecooTangerang'}">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Twitter / X Link</label>
+            <input type="text" id="setting-footer-twitter" class="form-control" value="${settingsData.footer?.twitter || '#'}">
+          </div>
+        </div>
+      </div>
     </div>
   `;
   createIcons({ icons });
 
   document.getElementById('save-settings-btn').addEventListener('click', async () => {
     settingsData.aboutVideoUrl = document.getElementById('setting-about-video').value;
+    settingsData.footer = {
+      address: document.getElementById('setting-footer-address').value,
+      phone: document.getElementById('setting-footer-phone').value,
+      whatsapp: document.getElementById('setting-footer-whatsapp').value,
+      email: document.getElementById('setting-footer-email').value,
+      facebook: document.getElementById('setting-footer-facebook').value,
+      twitter: document.getElementById('setting-footer-twitter').value,
+      instagram: document.getElementById('setting-footer-instagram').value,
+      youtube: document.getElementById('setting-footer-youtube').value,
+    };
     try {
       await adminApi.saveSettings(settingsData);
       alert('Settings saved!');
