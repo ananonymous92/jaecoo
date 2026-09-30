@@ -18,11 +18,8 @@ export const renderHero = (t, modelsData = []) => {
           <img src="${model.heroImage}" class="hero-slide-bg" alt="${model.name}">
           <div class="hero-overlay"></div>
           <div class="hero-content">
-            <div class="container">
-              <span class="hero-badge">${model.badge}</span>
-              <h1 class="hero-headline">${model.name}</h1>
-              <p class="hero-subheadline">${model.tagline}. ${model.shortDesc.substring(0, 100)}...</p>
-              <div class="hero-actions">
+            <div class="container" style="height: 100%; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; padding-bottom: 8rem;">
+              <div class="hero-actions" style="margin-top: 0;">
                 <a href="javascript:void(0)" onclick="window.openModelDetail('${model.slug}')" class="btn btn-primary">${t.hero.ctaExplore || 'EXPLORE MODEL'}</a>
                 <a href="#reservation" class="btn btn-outline">${t.hero.ctaReservation || 'BOOK TEST DRIVE'}</a>
               </div>
