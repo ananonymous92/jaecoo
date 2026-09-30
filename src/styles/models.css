@@ -218,8 +218,12 @@
 
 @media (max-width: 768px) {
   .model-page-hero {
-    height: 85vh;
-    background-attachment: scroll; /* Fix mobile parallax bug */
+    height: auto;
+    aspect-ratio: 1 / 1;
+    background-attachment: scroll;
+    background-position: 20% center !important;
+    align-items: flex-end;
+    padding-bottom: 3rem;
   }
   .model-hero-title {
     font-size: clamp(2.5rem, 8vw, 4rem) !important;

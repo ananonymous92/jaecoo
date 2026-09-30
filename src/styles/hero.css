@@ -266,9 +266,17 @@
 }
 
 @media (max-width: 768px) {
+  .hero-section {
+    height: auto;
+    min-height: auto;
+    aspect-ratio: 1 / 1; /* Best compromise for mobile: tall enough for buttons, wide enough to avoid extreme cropping */
+  }
   .hero-slide-bg {
-    object-fit: contain;
-    background-color: var(--color-deep-black);
+    object-fit: cover;
+    object-position: 20% center; /* Shift focus slightly left so text doesn't cut off */
+  }
+  .hero-content .container {
+    padding-bottom: 3rem !important;
   }
   .hero-actions {
     flex-direction: column;
