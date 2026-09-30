@@ -8,7 +8,7 @@ export const renderHeader = (t, modelsData = []) => {
   header.innerHTML = `
     <div class="container header-inner">
       <a href="#" class="brand-logo">
-        <img src="/images/logo.png" alt="JAECOO" onerror="this.outerHTML='<span class=\\'logo-text\\'>JAECOO</span>'" style="height: 30px; filter: brightness(0) invert(1);">
+        <img src="/images/logo.png" alt="JAECOO" onerror="this.outerHTML='<span class=\\'logo-text\\'>JAECOO</span>'" style="height: 20px; filter: brightness(0) invert(1);">
       </a>
       
       <nav class="nav-desktop">
