@@ -73,6 +73,7 @@ const renderApp = () => {
   initHeaderEvents();
   initHeroEvents();
   initModelEvents();
+  initFormEvents();
   initSHSEvents();
   initGalleryEvents();
   initTestimonyEvents();
