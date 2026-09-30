@@ -110,6 +110,13 @@ async function handleReservationSubmit(e) {
     if (reservationForm) reservationForm.style.display = 'none';
     if (successState) successState.style.display = 'block';
     
+    // Redirect to WhatsApp
+    const waNumber = '6281338384136'; // Admin WA number from Footer
+    const waMessage = `Halo JAECOO,\n\nSaya telah melakukan reservasi Test Drive melalui website.\n\n*Detail Reservasi:*\n- Nama: ${data.name}\n- No. WA: ${data.phone}\n- Email: ${data.email || '-'}\n- Model: ${data.model}\n- Dealer: ${data.dealer}\n- Tanggal: ${data.date || '-'}\n\nMohon informasi selanjutnya. Terima kasih.`;
+    
+    const waUrl = `https://wa.me/${waNumber}?text=${encodeURIComponent(waMessage)}`;
+    window.open(waUrl, '_blank');
+    
   } catch (error) {
     console.error('Reservation error:', error);
     alert('Terjadi kesalahan. Silakan coba lagi.');
