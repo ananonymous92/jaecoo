@@ -15,7 +15,10 @@
 }
 
 .reservation-image {
-  background: url('https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=1200&q=85') center/cover no-repeat;
+  background-color: var(--color-deep-black);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
   position: relative;
 }
 

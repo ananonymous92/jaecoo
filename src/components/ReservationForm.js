@@ -2,11 +2,13 @@ import { api } from '../utils/apiClient.js';
 
 export const renderForms = (t, modelsData = [], dealersData = []) => {
   const reservationSection = document.getElementById('reservation');
+  const settings = window.appState.data.settings || {};
+  const resImage = settings.reservationImage || 'https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=1200&q=85';
   
   reservationSection.innerHTML = `
     <div class="container">
       <div class="reservation-wrapper reveal-on-scroll">
-        <div class="reservation-image"></div>
+        <div class="reservation-image" style="background-image: url('${resImage}')"></div>
         <div class="reservation-content">
           <div style="text-align: center; margin-bottom: 2rem;">
             <span class="eyebrow">${t.reservation.title}</span>

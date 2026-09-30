@@ -897,6 +897,18 @@ async function initReservationTab() {
     `).join('');
 
     container.innerHTML = `
+      <div class="dashboard-card" style="margin-bottom: 2rem;">
+        <div class="card-header"><h3 class="card-title">Reservation Form Settings</h3></div>
+        <div class="form-group">
+          <label class="form-label">Gambar Latar Reservasi (Reservation Image)</label>
+          <div style="display: flex; gap: 10px; align-items: center;">
+            <input type="text" id="res-image-url" class="form-control" placeholder="https://..." value="">
+            <button class="btn btn-outline" onclick="uploadToInput('res-image-url')"><i data-lucide="upload"></i> Upload</button>
+            <button class="btn btn-primary" id="save-res-settings">Save</button>
+          </div>
+        </div>
+      </div>
+      
       <div class="dashboard-card">
         <div class="card-header"><h3 class="card-title">Test Drive Reservations</h3></div>
         <table class="data-table">
@@ -905,6 +917,21 @@ async function initReservationTab() {
         </table>
       </div>
     `;
+    
+    // Fetch and populate current setting
+    fetch('/api/settings').then(r=>r.json()).then(s => {
+      if(s.reservationImage) document.getElementById('res-image-url').value = s.reservationImage;
+    });
+
+    document.getElementById('save-res-settings')?.addEventListener('click', async () => {
+      try {
+        const s = await fetch('/api/settings').then(r=>r.json());
+        s.reservationImage = document.getElementById('res-image-url').value;
+        await adminApi.saveSettings(s);
+        alert('Pengaturan reservasi berhasil disimpan!');
+      } catch (err) { alert('Gagal menyimpan: ' + err.message); }
+    });
+
   } catch (e) { container.innerHTML = '<div class="dashboard-card"><p style="color:var(--danger);">Error loading reservations.</p></div>'; }
 }
 

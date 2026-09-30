@@ -593,10 +593,10 @@ import{b as A,f as I}from"./apiClient-lyAnOTD-.js";import{i as x,c as S}from"./v
         </div>
       </div>
     </div>
-  `},G=()=>{const e=document.getElementById("dealers");window.lucide&&window.lucide.createIcons({root:e,nameAttr:"data-lucide",attrs:{class:"lucide","stroke-width":1.5}})},W=(e,s=[],i=[])=>{const a=document.getElementById("reservation");a.innerHTML=`
+  `},G=()=>{const e=document.getElementById("dealers");window.lucide&&window.lucide.createIcons({root:e,nameAttr:"data-lucide",attrs:{class:"lucide","stroke-width":1.5}})},W=(e,s=[],i=[])=>{const a=document.getElementById("reservation"),n=(window.appState.data.settings||{}).reservationImage||"https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=1200&q=85";a.innerHTML=`
     <div class="container">
       <div class="reservation-wrapper reveal-on-scroll">
-        <div class="reservation-image"></div>
+        <div class="reservation-image" style="background-image: url('${n}')"></div>
         <div class="reservation-content">
           <div style="text-align: center; margin-bottom: 2rem;">
             <span class="eyebrow">${e.reservation.title}</span>
@@ -621,14 +621,14 @@ import{b as A,f as I}from"./apiClient-lyAnOTD-.js";import{i as x,c as S}from"./v
                 <label class="form-label">${e.reservation.selectModel} *</label>
                 <select id="res-model" class="form-control" required>
                   <option value="">-- Pilih Model --</option>
-                  ${s.map(t=>`<option value="${t.name}">${t.name}</option>`).join("")}
+                  ${s.map(l=>`<option value="${l.name}">${l.name}</option>`).join("")}
                 </select>
               </div>
               <div class="form-group">
                 <label class="form-label">${e.reservation.selectDealer} *</label>
                 <select id="res-dealer" class="form-control" required>
                   <option value="">-- Pilih Dealer --</option>
-                  ${i.map(t=>`<option value="${t.name}">${t.name}</option>`).join("")}
+                  ${i.map(l=>`<option value="${l.name}">${l.name}</option>`).join("")}
                 </select>
               </div>
               <div class="form-group">
