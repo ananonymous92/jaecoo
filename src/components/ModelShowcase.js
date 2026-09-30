@@ -100,10 +100,7 @@ export const renderModelDetailView = (slug) => {
         <!-- ═══ HERO ═══ -->
         <div class="model-page-hero" style="background-image: url('${model.heroImage}');">
           <div class="model-hero-content text-center">
-            <span style="display:inline-block; background:rgba(0,210,196,0.15); color:#00D2C4; padding:0.4rem 1.2rem; border-radius:20px; font-size:0.75rem; letter-spacing:0.15em; font-weight:600; margin-bottom:1rem;">${model.badge || model.category}</span>
-            <h1 class="model-hero-title">${model.name.replace('JAECOO ', '')}</h1>
-            <p class="model-hero-tagline">${model.tagline || ''}</p>
-            <p style="color:rgba(255,255,255,0.7); font-size:0.95rem; max-width:600px; margin:1rem auto 0;">${model.shortDesc || ''}</p>
+            <!-- Text overlay removed to prevent overlap with designed banners -->
           </div>
           <div class="scroll-indicator" style="position:absolute; right: 2rem; bottom: 10rem; display:flex; flex-direction:column; align-items:center; gap:0.5rem; color:#fff;">
             <div class="mouse-icon" style="width:24px; height:36px; border:2px solid #fff; border-radius:12px; position:relative;">
