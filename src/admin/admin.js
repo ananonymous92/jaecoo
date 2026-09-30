@@ -903,7 +903,7 @@ async function initReservationTab() {
           <label class="form-label">Gambar Latar Reservasi (Reservation Image)</label>
           <div style="display: flex; gap: 10px; align-items: center;">
             <input type="text" id="res-image-url" class="form-control" placeholder="https://..." value="">
-            <button class="btn btn-outline" onclick="uploadToInput('res-image-url')"><i data-lucide="upload"></i> Upload</button>
+            <button class="btn btn-outline" id="btn-upload-res-image"><i data-lucide="upload"></i> Upload</button>
             <button class="btn btn-primary" id="save-res-settings">Save</button>
           </div>
         </div>
@@ -921,6 +921,10 @@ async function initReservationTab() {
     // Fetch and populate current setting
     fetch('/api/settings').then(r=>r.json()).then(s => {
       if(s.reservationImage) document.getElementById('res-image-url').value = s.reservationImage;
+    });
+
+    document.getElementById('btn-upload-res-image')?.addEventListener('click', () => {
+      uploadToInput('res-image-url');
     });
 
     document.getElementById('save-res-settings')?.addEventListener('click', async () => {
