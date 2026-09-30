@@ -32,7 +32,7 @@ async function request(method, endpoint, body = null, options = {}) {
   if (res.status === 401) {
     // Clear invalid token
     clearAdminToken();
-    if (typeof window !== 'undefined' && window.onAuthExpired) {
+    if (endpoint !== '/auth/login' && typeof window !== 'undefined' && window.onAuthExpired) {
       window.onAuthExpired();
     }
   }
