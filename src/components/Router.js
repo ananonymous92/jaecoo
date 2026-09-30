@@ -67,17 +67,32 @@ export const initRouter = () => {
         window.openNewsDetail(slug);
       }
     } else {
-       // Close modals if navigating back to home
+       // Close modals if navigating back to home or another section
        const modelView = document.getElementById('model-detail-view');
        const articleModal = document.getElementById('article-modal');
        if (modelView && modelView.classList.contains('active')) {
          modelView.classList.remove('active');
          modelView.style.display = 'none';
-         document.body.style.overflow = '';
        }
        if (articleModal && articleModal.classList.contains('active')) {
          articleModal.classList.remove('active');
-         document.body.style.overflow = '';
+       }
+       document.body.style.overflow = '';
+       
+       // Handle scrolling to section if a hash is present (e.g. #reservation)
+       if (hash && hash !== '#' && hash !== '#/') {
+         setTimeout(() => {
+           const target = document.querySelector(hash);
+           if (target) {
+             const headerOffset = 80;
+             const elementPosition = target.getBoundingClientRect().top;
+             const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+             window.scrollTo({
+               top: offsetPosition,
+               behavior: 'smooth'
+             });
+           }
+         }, 50);
        }
     }
   };
