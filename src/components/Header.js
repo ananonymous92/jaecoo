@@ -7,7 +7,7 @@ export const renderHeader = (t, modelsData = []) => {
   // Render Header
   header.innerHTML = `
     <div class="container header-inner">
-      <a href="#" class="brand-logo">
+      <a href="javascript:void(0)" class="brand-logo" onclick="if(window.closeModals) window.closeModals(); window.location.hash=''; window.scrollTo({top:0, behavior:'smooth'});">
         <img src="/images/logo.png" alt="JAECOO" onerror="this.outerHTML='<span class=\\'logo-text\\'>JAECOO</span>'" style="height: 20px; filter: brightness(0) invert(1);">
       </a>
       

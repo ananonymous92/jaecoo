@@ -6,15 +6,15 @@
     "category": "SUV Electric",
     "tagline": "This is The Real SUV",
     "shortDesc": "SUV listrik murni berkarakter tangguh yang menggabungkan mobilitas ramah lingkungan, desain boxy modern, dan kecerdasan kokpit masa depan.",
-    "price": "Mulai Rp 420.000.000 (Est.)",
-    "heroImage": "/images/upload-1790583548209-858550571.avif",
-    "cardImage": "/images/upload-1790583566030-385737399.png",
+    "price": "Mulai Rp 279.900.000(Est.)",
+    "heroImage": "/images/upload-1790694882291-68117556.avif",
+    "cardImage": "/images/upload-1790736625907-865208552.avif",
     "badge": "100% PURE ELECTRIC",
     "powertrain": "Permanent Magnet Synchronous Motor",
     "specs": {
       "power": "155kW",
       "torque": "288N.m",
-      "battery": "60.9 kWh Blade Battery",
+      "battery": "60.9 kWh Lithium Ferro Phosphate (LFP)",
       "evRange": "420 km (CLTC)",
       "drivingRange": "420 km",
       "acceleration": "0-100 km/h dalam 7.6 detik",
@@ -26,30 +26,30 @@
     },
     "colors": [
       {
-        "name": "Khaki White",
+        "name": "Pristine White",
         "hex": "#f4f4f2",
-        "img": "/images/upload-1790589990124-118415544.png"
+        "img": "/images/upload-1790694928280-960170936.avif"
       },
       {
-        "name": "Forest Olive Green",
-        "hex": "#2e3b32",
-        "img": "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?auto=format&fit=crop&w=1200&q=85"
+        "name": "⁠Jet Black",
+        "hex": "#343434",
+        "img": "/images/upload-1790694958129-34936923.avif"
       },
       {
-        "name": "Carbon Crystal Black",
-        "hex": "#141416",
-        "img": "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=85"
+        "name": "⁠Ivory Grey",
+        "hex": "#c2bba8",
+        "img": "/images/upload-1790694971651-774427904.avif"
       },
       {
-        "name": "Cyber Ice Cyan",
-        "hex": "#008e9b",
-        "img": "https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?auto=format&fit=crop&w=1200&q=85"
+        "name": "Forest Green",
+        "hex": "#335161",
+        "img": "/images/upload-1790694984267-62587051.avif"
       }
     ],
     "trims": [
       {
         "name": "J5 Standard",
-        "img": "https://freepngimg.com/thumb/car/3-2-car-free-download-png-thumb.png",
+        "img": "/images/upload-1790695252511-194960407.avif",
         "price": "IDR 279.900.000",
         "features": [
           "35 in-car storage compartments",
@@ -59,7 +59,7 @@
       },
       {
         "name": "J5 Premium",
-        "img": "https://freepngimg.com/thumb/car/3-2-car-free-download-png-thumb.png",
+        "img": "/images/upload-1790695264133-700546940.avif",
         "price": "IDR 324.900.000",
         "features": [
           "Panoramic Roof 1.45 m2",
@@ -75,7 +75,7 @@
       },
       {
         "title": "BYD Blade Battery 60.9 kWh",
-        "desc": "Teknologi baterai ultra-safe Blade Battery dengan ketahanan thermal superior, siklus hidup lebih panjang, dan garansi 8 tahun."
+        "desc": "Teknologi baterai ultra-safe Lithium Ferro Phosphate (LFP) dengan ketahanan thermal superior, siklus hidup lebih panjang, dan garansi 8 tahun."
       },
       {
         "title": "DC Fast Charging",
@@ -105,52 +105,58 @@
       "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=85"
     ],
     "hotspots": [],
-    "interiorImage": ""
+    "interiorImage": "/images/upload-1790694916220-764141247.avif"
   },
   {
-    "id": "j7-shs-p",
-    "slug": "j7-shs-p",
+    "id": "jaecoo-j7-shs-p",
+    "slug": "jaecoo-j7-shs-p",
     "name": "JAECOO J7 SHS-P",
     "category": "Premium Plug-in Hybrid SUV",
     "tagline": "POWER MEETS EFFICIENCY",
     "shortDesc": "SUV hybrid plug-in premium dengan perpaduan siluet tangguh waterfall grille, teknologi Super Hybrid System generasi ke-5, dan daya jelajah komprehensif lebih dari 1.200 km.",
-    "price": "Mulai Rp 550.000.000 (Est.)",
-    "heroImage": "/images/hero_j7.jpg",
-    "cardImage": "https://freepngimg.com/thumb/car/4-2-car-png-hd-thumb.png",
+    "price": "Mulai Rp 514.900.000 (Est.)",
+    "heroImage": "/images/upload-1790694637322-568924708.avif",
+    "cardImage": "/images/upload-1790736650777-854949291.avif",
     "badge": "SUPER HYBRID SYSTEM (PHEV)",
     "powertrain": "1.5 TGDI Turbo Hybrid Engine + Dual Electric Motors + DHT",
     "specs": {
       "power": "255 kW (342 HP) Combined",
       "torque": "525 Nm Combined",
-      "battery": "18.3 kWh Dedicated Hybrid Blade Battery",
+      "battery": "18.3 kWh Dedicated Hybrid Lithium Ferro Phosphate (LFP)",
       "evRange": "98 km (Pure Electric)",
       "drivingRange": "> 1.200 km (PHEV Combined)",
       "acceleration": "0-100 km/h dalam 6.8 detik",
       "driveSystem": "Intelligent All-Wheel Drive / FWD Optional",
       "groundClearance": "200 mm",
       "chargingTime": "DC Fast Charge 30-80% dalam 19 menit | AC Charging 3.5 jam",
-      "energyEfficiency": "4.7 L / 100 km (Baterai kondisi low state)"
+      "energyEfficiency": "4.7 L / 100 km (Baterai kondisi low state)",
+      "wadingDepth": ""
     },
     "colors": [
       {
-        "name": "Titanium Dark Gray",
-        "hex": "#32373B",
-        "img": "/images/hero_j7.jpg"
+        "name": "Stone Gray",
+        "hex": "#928e85",
+        "img": "/images/upload-1790694470637-348160040.avif"
       },
       {
         "name": "Moonlight Silver",
-        "hex": "#C5C7CB",
-        "img": "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=85"
+        "hex": "#cac6c2",
+        "img": "/images/upload-1790694497181-42893285.avif"
       },
       {
-        "name": "Carbon Crystal Black",
-        "hex": "#0E0F11",
-        "img": "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=1200&q=85"
+        "name": "Pristine White",
+        "hex": "#f2e8da",
+        "img": "/images/upload-1790694565481-678866069.avif"
       },
       {
-        "name": "Alpine White",
-        "hex": "#EDEDED",
-        "img": "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=1200&q=85"
+        "name": "Jet Black",
+        "hex": "#0a0a0a",
+        "img": "/images/upload-1790694569547-467902997.avif"
+      },
+      {
+        "name": "Pristine White Two Tone",
+        "hex": "#ffffff",
+        "img": "/images/upload-1790694573261-677485311.avif"
       }
     ],
     "keyFeatures": [
@@ -188,52 +194,56 @@
       "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=85",
       "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=1200&q=85",
       "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=1200&q=85"
-    ]
+    ],
+    "trims": [],
+    "hotspots": [],
+    "interiorImage": "/images/upload-1790694680700-367676746.avif"
   },
   {
-    "id": "j8-shs-p-ardis",
-    "slug": "j8-shs-p-ardis",
+    "id": "jaecoo-j8-shs-p-ardis",
+    "slug": "jaecoo-j8-shs-p-ardis",
     "name": "JAECOO J8 SHS-P ARDIS",
     "category": "Premium AWD Super Hybrid SUV",
     "tagline": "COMMAND EVERY TERRAIN",
     "shortDesc": "Flagship luxury SUV dengan sistem penggerak cerdas ARDIS (All-Road Drive Intelligent System), suspensi aktif CDC Magnetic Levitation, dan kenyamanan lounge kelas satu.",
-    "price": "Mulai Rp 720.000.000 (Est.)",
-    "heroImage": "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=1920&q=85",
-    "cardImage": "https://freepngimg.com/thumb/car/1-2-car-png-picture-thumb.png",
+    "price": "Mulai Rp 838.000.000 (Est.)",
+    "heroImage": "/images/upload-1790736383330-716811606.avif",
+    "cardImage": "/images/upload-1790736550843-391717029.avif",
     "badge": "FLAGSHIP AWD ARDIS",
     "powertrain": "2.0 TGDI Turbo Hybrid + Triple Electric Motors + 3DHT All-Wheel Drive",
     "specs": {
-      "power": "445 kW (597 HP) Combined Max",
-      "torque": "915 Nm Combined Peak",
-      "battery": "34.46 kWh High-Energy Ternary Battery",
+      "power": "395 kW",
+      "torque": "650 Nm",
+      "battery": "34.46 kWh Lithium Ferro Phosphate (LFP)",
       "evRange": "160 km (Pure Electric)",
       "drivingRange": "> 1.300 km (Combined Range)",
       "acceleration": "0-100 km/h dalam 5.4 detik",
       "driveSystem": "ARDIS Intelligent All-Terrain AWD (7 Driving Modes)",
-      "groundClearance": "215 mm",
+      "groundClearance": "220 mm",
       "chargingTime": "DC Fast Charging 20-80% dalam 20 menit | AC 6.6 kW",
-      "energyEfficiency": "5.8 L / 100 km (WLTC)"
+      "energyEfficiency": "5.8 L / 100 km (WLTC)",
+      "wadingDepth": ""
     },
     "colors": [
       {
-        "name": "Graphite Matte Black",
-        "hex": "#1A1B1E",
-        "img": "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=1200&q=85"
+        "name": "Stone Gray",
+        "hex": "#385560",
+        "img": "/images/upload-1790736195971-869530123.avif"
       },
       {
-        "name": "Nordic Emerald Green",
-        "hex": "#162B26",
-        "img": "https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=1200&q=85"
+        "name": "Pristine White Two Tone",
+        "hex": "#94949c",
+        "img": "/images/upload-1790736242312-996152600.avif"
       },
       {
-        "name": "Liquid Silver Metallic",
-        "hex": "#BFC5CB",
-        "img": "https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=1200&q=85"
+        "name": "Lunar  Silve",
+        "hex": "#7a8485",
+        "img": "/images/upload-1790736287252-600155041.avif"
       },
       {
-        "name": "Polar Ice White",
-        "hex": "#F7F8F9",
-        "img": "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=1200&q=85"
+        "name": "Jet Black",
+        "hex": "#131313",
+        "img": "/images/upload-1790736308623-290892682.avif"
       }
     ],
     "keyFeatures": [
@@ -271,6 +281,9 @@
       "https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=1200&q=85",
       "https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=1200&q=85",
       "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=1200&q=85"
-    ]
+    ],
+    "trims": [],
+    "hotspots": [],
+    "interiorImage": "/images/upload-1790736558170-97626136.avif"
   }
 ]

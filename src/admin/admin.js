@@ -401,6 +401,13 @@ function syncModelFormToState() {
   m.specs.torque = document.getElementById('mod-spec-torque')?.value || '';
   m.specs.groundClearance = document.getElementById('mod-spec-gc')?.value || '';
   m.specs.wadingDepth = document.getElementById('mod-spec-wd')?.value || '';
+  m.specs.battery = document.getElementById('mod-spec-battery')?.value || '';
+  m.specs.evRange = document.getElementById('mod-spec-ev')?.value || '';
+  m.specs.drivingRange = document.getElementById('mod-spec-dr')?.value || '';
+  m.specs.acceleration = document.getElementById('mod-spec-accel')?.value || '';
+  m.specs.driveSystem = document.getElementById('mod-spec-ds')?.value || '';
+  m.specs.chargingTime = document.getElementById('mod-spec-charge')?.value || '';
+  m.specs.energyEfficiency = document.getElementById('mod-spec-eff')?.value || '';
 
   m.colors.forEach((c, i) => {
     c.name = document.getElementById(`mod-col-name-${i}`)?.value || '';
@@ -418,6 +425,10 @@ function syncModelFormToState() {
     h.label = document.getElementById(`mod-hs-label-${i}`)?.value || '';
     h.top = document.getElementById(`mod-hs-top-${i}`)?.value || 50;
     h.left = document.getElementById(`mod-hs-left-${i}`)?.value || 50;
+  });
+  m.keyFeatures.forEach((kf, i) => {
+    kf.title = document.getElementById(`mod-kf-title-${i}`)?.value || '';
+    kf.desc = document.getElementById(`mod-kf-desc-${i}`)?.value || '';
   });
 }
 
@@ -459,6 +470,13 @@ function renderModelForm() {
           <div class="form-group"><label class="form-label">Torque</label><input type="text" id="mod-spec-torque" class="form-control" value="${m.specs.torque || ''}"></div>
           <div class="form-group"><label class="form-label">Ground Clearance</label><input type="text" id="mod-spec-gc" class="form-control" value="${m.specs.groundClearance || ''}"></div>
           <div class="form-group"><label class="form-label">Wading Depth</label><input type="text" id="mod-spec-wd" class="form-control" value="${m.specs.wadingDepth || ''}"></div>
+          <div class="form-group"><label class="form-label">Battery</label><input type="text" id="mod-spec-battery" class="form-control" value="${m.specs.battery || ''}"></div>
+          <div class="form-group"><label class="form-label">EV Range</label><input type="text" id="mod-spec-ev" class="form-control" value="${m.specs.evRange || ''}"></div>
+          <div class="form-group"><label class="form-label">Driving Range</label><input type="text" id="mod-spec-dr" class="form-control" value="${m.specs.drivingRange || ''}"></div>
+          <div class="form-group"><label class="form-label">Acceleration</label><input type="text" id="mod-spec-accel" class="form-control" value="${m.specs.acceleration || ''}"></div>
+          <div class="form-group"><label class="form-label">Drive System</label><input type="text" id="mod-spec-ds" class="form-control" value="${m.specs.driveSystem || ''}"></div>
+          <div class="form-group"><label class="form-label">Charging</label><input type="text" id="mod-spec-charge" class="form-control" value="${m.specs.chargingTime || ''}"></div>
+          <div class="form-group"><label class="form-label">Efficiency</label><input type="text" id="mod-spec-eff" class="form-control" value="${m.specs.energyEfficiency || ''}"></div>
         </div>
 
         <div style="display:flex; justify-content:space-between; align-items:center; margin:25px 0 15px 0;">
@@ -497,6 +515,21 @@ function renderModelForm() {
         ${m.trims.length === 0 ? '<p style="color:#666; font-size:0.9rem;">No trims added yet.</p>' : ''}
 
         <div style="display:flex; justify-content:space-between; align-items:center; margin:25px 0 15px 0;">
+          <h4 style="color:var(--color-accent-cyan); margin:0;">Key Features</h4>
+          <button class="btn btn-outline" style="padding: 4px 10px; font-size: 0.8rem;" id="add-kf-btn">+ Add Feature</button>
+        </div>
+        <div id="kf-container">
+        ${m.keyFeatures.map((kf, i) => `
+          <div style="background: rgba(255,255,255,0.02); padding: 15px; border-radius: 8px; margin-bottom: 10px;">
+            <div class="form-group" style="margin:0 0 10px 0;"><label class="form-label">Feature Title</label><input type="text" id="mod-kf-title-${i}" class="form-control" value="${kf.title}"></div>
+            <div class="form-group" style="margin:0;"><label class="form-label">Description</label><textarea id="mod-kf-desc-${i}" class="form-control" style="min-height: 60px;">${kf.desc}</textarea></div>
+            <button class="btn btn-outline remove-kf-btn" style="border-color:var(--danger); color:var(--danger); padding:4px 12px; margin-top:10px; font-size:0.85rem;" data-index="${i}">Remove Feature</button>
+          </div>
+        `).join('')}
+        </div>
+        ${m.keyFeatures.length === 0 ? '<p style="color:#666; font-size:0.9rem;">No key features added yet.</p>' : ''}
+
+        <div style="display:flex; justify-content:space-between; align-items:center; margin:25px 0 15px 0;">
           <h4 style="color:var(--color-accent-cyan); margin:0;">Interior Hotspots</h4>
           <button class="btn btn-outline" style="padding: 4px 10px; font-size: 0.8rem;" id="add-hotspot-btn">+ Add Hotspot</button>
         </div>
@@ -521,6 +554,7 @@ function renderModelForm() {
   document.getElementById('add-color-btn')?.addEventListener('click', () => { syncModelFormToState(); m.colors.push({ name: '', hex: '#ffffff', img: '' }); renderModelForm(); });
   document.getElementById('add-trim-btn')?.addEventListener('click', () => { syncModelFormToState(); m.trims.push({ name: '', price: '', img: '', features: [] }); renderModelForm(); });
   document.getElementById('add-hotspot-btn')?.addEventListener('click', () => { syncModelFormToState(); m.hotspots.push({ label: '', top: 50, left: 50 }); renderModelForm(); });
+  document.getElementById('add-kf-btn')?.addEventListener('click', () => { syncModelFormToState(); m.keyFeatures.push({ title: '', desc: '' }); renderModelForm(); });
 
   container.querySelectorAll('.remove-color-btn').forEach(btn => {
     btn.addEventListener('click', () => { syncModelFormToState(); m.colors.splice(parseInt(btn.dataset.index), 1); renderModelForm(); });
@@ -530,6 +564,9 @@ function renderModelForm() {
   });
   container.querySelectorAll('.remove-hotspot-btn').forEach(btn => {
     btn.addEventListener('click', () => { syncModelFormToState(); m.hotspots.splice(parseInt(btn.dataset.index), 1); renderModelForm(); });
+  });
+  container.querySelectorAll('.remove-kf-btn').forEach(btn => {
+    btn.addEventListener('click', () => { syncModelFormToState(); m.keyFeatures.splice(parseInt(btn.dataset.index), 1); renderModelForm(); });
   });
   container.querySelectorAll('.upload-btn').forEach(btn => {
     btn.addEventListener('click', () => uploadToInput(btn.dataset.target));
