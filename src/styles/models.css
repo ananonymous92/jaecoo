@@ -219,20 +219,27 @@
 @media (max-width: 768px) {
   .model-page-hero {
     height: auto;
-    aspect-ratio: 1 / 1;
+    aspect-ratio: 16 / 10;
     background-attachment: scroll;
-    background-position: 20% center !important;
+    background-position: center !important;
     align-items: flex-end;
-    padding-bottom: 3rem;
+    padding-bottom: 2rem;
   }
   .model-hero-title {
-    font-size: clamp(2.5rem, 8vw, 4rem) !important;
+    display: none;
   }
   .model-hero-tagline {
-    font-size: 1rem !important;
+    display: none;
   }
   .model-hero-actions {
-    flex-direction: column;
+    flex-direction: row;
+    gap: 0.5rem;
+    width: 100%;
+  }
+  .model-hero-actions .btn {
+    width: 50%;
+    font-size: 0.75rem;
+    padding: 0.75rem 0.5rem;
   }
   /* Specs grid */
   .model-page-container [style*="grid-template-columns: repeat(auto-fit, minmax(220px"] {
