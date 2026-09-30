@@ -18,7 +18,7 @@ async function request(method, endpoint, body = null, options = {}) {
     headers['X-Admin-Token'] = token;
   }
 
-  const config = { method, headers };
+  const config = { method, headers, cache: 'no-store' };
 
   if (body && !(body instanceof FormData)) {
     headers['Content-Type'] = 'application/json';
