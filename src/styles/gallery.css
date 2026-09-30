@@ -48,15 +48,6 @@
   background: var(--color-surface-2);
 }
 
-.gallery-item:nth-child(3n) {
-  grid-column: span 2;
-  grid-row: span 2;
-}
-
-.gallery-item:nth-child(4n) {
-  grid-row: span 2;
-}
-
 .gallery-img {
   width: 100%;
   height: 100%;
@@ -186,10 +177,6 @@
 .lightbox-next { right: 2rem; }
 
 @media (max-width: 768px) {
-  .gallery-item:nth-child(3n), .gallery-item:nth-child(4n) {
-    grid-column: span 1;
-    grid-row: span 1;
-  }
   .gallery-grid {
     grid-template-columns: repeat(2, 1fr);
     grid-auto-rows: 200px;
