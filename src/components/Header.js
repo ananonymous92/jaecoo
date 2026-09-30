@@ -33,7 +33,7 @@ export const renderHeader = (t, modelsData = []) => {
           <button class="lang-btn ${window.appState.lang === 'id' ? 'active' : ''}" data-lang="id">ID</button>
           <button class="lang-btn ${window.appState.lang === 'en' ? 'active' : ''}" data-lang="en">EN</button>
         </div>
-        <a href="#reservation" class="btn btn-outline btn-sm hide-on-mobile">${t.nav.reservation}</a>
+        <a href="javascript:void(0)" onclick="if(window.closeModals) window.closeModals(); history.replaceState(null, '', window.location.pathname + '#reservation'); setTimeout(() => { const el = document.getElementById('reservation'); if(el) el.scrollIntoView({behavior:'smooth'}); }, 100);" class="btn btn-outline btn-sm hide-on-mobile">${t.nav.reservation}</a>
         
         <button class="hamburger-btn" id="mobile-menu-btn" aria-label="Toggle Menu">
           <span class="hamburger-line"></span>

@@ -84,13 +84,7 @@ export const initRouter = () => {
          setTimeout(() => {
            const target = document.querySelector(hash);
            if (target) {
-             const headerOffset = 80;
-             const elementPosition = target.getBoundingClientRect().top;
-             const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-             window.scrollTo({
-               top: offsetPosition,
-               behavior: 'smooth'
-             });
+             target.scrollIntoView({ behavior: 'smooth', block: 'start' });
            }
          }, 50);
        }
