@@ -9,13 +9,25 @@ export const renderBrandIntro = (t, settings = {}) => {
       <source src="${videoUrl}" type="video/mp4">
     </video>
     
-    <!-- Dark Overlay & Content -->
+    <!-- Lighter Overlay for better video visibility -->
     <div class="brand-intro-overlay">
       <div class="brand-intro-content reveal-on-scroll">
-        <span class="eyebrow">${t.about.title}</span>
-        <h2>${t.brandStatement.heading}</h2>
-        <p>${t.about.desc1} ${t.about.desc2}</p>
+        <span class="brand-intro-eyebrow">${t.about.title}</span>
+        <h2 class="brand-intro-heading">${t.brandStatement.heading}</h2>
+        <div class="brand-intro-divider"></div>
+        <p class="brand-intro-desc">${t.about.desc1}</p>
+        <p class="brand-intro-desc2">${t.about.desc2}</p>
       </div>
+    </div>
+
+    <!-- Stats Bar -->
+    <div class="brand-stats-bar">
+      ${t.about.stats.map(stat => `
+        <div class="brand-stat-item">
+          <span class="brand-stat-value">${stat.value}</span>
+          <span class="brand-stat-label">${stat.label}</span>
+        </div>
+      `).join('')}
     </div>
   `;
 };
