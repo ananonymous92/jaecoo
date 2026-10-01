@@ -279,14 +279,23 @@
     padding-bottom: 2rem !important;
   }
   .hero-actions {
-    flex-direction: row; /* Side by side on mobile */
+    flex-direction: row;
+    justify-content: center;
     gap: 0.5rem;
     width: 100%;
+    max-width: 340px; /* Batasi lebar maksimal di mobile */
+    margin: 0 auto;
   }
   .hero-actions .btn {
-    width: 50%;
-    font-size: 0.75rem;
-    padding: 0.75rem 0.5rem;
+    flex: 1; /* Biarkan tombol membagi ruang rata */
+    width: auto;
+    font-size: 0.65rem; /* Perkecil font agar teks muat */
+    padding: 0.6rem 0.3rem;
+    letter-spacing: 0.05em; /* Kurangi jarak antar huruf */
+    line-height: 1.2;
+    height: 40px; /* Seragamkan tinggi tombol */
+    border-radius: 4px;
+    white-space: normal; /* Biarkan teks wrapping jika perlu, tapi dengan padding kecil tidak akan terlalu bengkak */
   }
   .hero-controls {
     bottom: 0.5rem;
