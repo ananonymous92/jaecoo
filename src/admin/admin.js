@@ -380,6 +380,7 @@ function editModel(index) {
   if (!editingData.colors) editingData.colors = [];
   if (!editingData.trims) editingData.trims = [];
   if (!editingData.hotspots) editingData.hotspots = [];
+  if (!editingData.gallery) editingData.gallery = [];
 
   window._editingModelData = editingData;
   renderModelForm();
@@ -430,6 +431,11 @@ function syncModelFormToState() {
     kf.title = document.getElementById(`mod-kf-title-${i}`)?.value || '';
     kf.desc = document.getElementById(`mod-kf-desc-${i}`)?.value || '';
   });
+
+  if (!m.gallery) m.gallery = [];
+  for (let i = 0; i < m.gallery.length; i++) {
+    m.gallery[i] = document.getElementById(`mod-gal-img-${i}`)?.value || '';
+  }
 }
 
 function renderModelForm() {
@@ -544,6 +550,20 @@ function renderModelForm() {
         `).join('')}
         </div>
         ${m.hotspots.length === 0 ? '<p style="color:#666; font-size:0.9rem;">No hotspots added yet.</p>' : ''}
+
+        <div style="display:flex; justify-content:space-between; align-items:center; margin:25px 0 15px 0;">
+          <h4 style="color:var(--color-accent-cyan); margin:0;">Model Gallery (Explore Every Angle)</h4>
+          <button class="btn btn-outline" style="padding: 4px 10px; font-size: 0.8rem;" id="add-mod-gal-btn">+ Add Image</button>
+        </div>
+        <div id="mod-gallery-container">
+        ${(m.gallery || []).map((g, i) => `
+          <div style="display: grid; grid-template-columns: 1fr auto; gap: 10px; background: rgba(255,255,255,0.02); padding: 15px; border-radius: 8px; margin-bottom: 10px; align-items:end;">
+            <div class="form-group" style="margin:0;"><label class="form-label">Image URL</label><div style="display:flex;gap:5px;"><input type="text" id="mod-gal-img-${i}" class="form-control" value="${g}"><button class="btn btn-outline upload-btn" style="padding:0 10px;" data-target="mod-gal-img-${i}">Upload</button></div></div>
+            <button class="btn btn-outline remove-mod-gal-btn" style="border-color:var(--danger); color:var(--danger); padding:8px 12px;" data-index="${i}">Remove</button>
+          </div>
+        `).join('')}
+        </div>
+        ${(m.gallery || []).length === 0 ? '<p style="color:#666; font-size:0.9rem;">No gallery images added yet.</p>' : ''}
       </div>
     </div>
   `;
@@ -555,6 +575,7 @@ function renderModelForm() {
   document.getElementById('add-trim-btn')?.addEventListener('click', () => { syncModelFormToState(); m.trims.push({ name: '', price: '', img: '', features: [] }); renderModelForm(); });
   document.getElementById('add-hotspot-btn')?.addEventListener('click', () => { syncModelFormToState(); m.hotspots.push({ label: '', top: 50, left: 50 }); renderModelForm(); });
   document.getElementById('add-kf-btn')?.addEventListener('click', () => { syncModelFormToState(); m.keyFeatures.push({ title: '', desc: '' }); renderModelForm(); });
+  document.getElementById('add-mod-gal-btn')?.addEventListener('click', () => { syncModelFormToState(); m.gallery = m.gallery || []; m.gallery.push(''); renderModelForm(); });
 
   container.querySelectorAll('.remove-color-btn').forEach(btn => {
     btn.addEventListener('click', () => { syncModelFormToState(); m.colors.splice(parseInt(btn.dataset.index), 1); renderModelForm(); });
@@ -567,6 +588,9 @@ function renderModelForm() {
   });
   container.querySelectorAll('.remove-kf-btn').forEach(btn => {
     btn.addEventListener('click', () => { syncModelFormToState(); m.keyFeatures.splice(parseInt(btn.dataset.index), 1); renderModelForm(); });
+  });
+  container.querySelectorAll('.remove-mod-gal-btn').forEach(btn => {
+    btn.addEventListener('click', () => { syncModelFormToState(); m.gallery.splice(parseInt(btn.dataset.index), 1); renderModelForm(); });
   });
   container.querySelectorAll('.upload-btn').forEach(btn => {
     btn.addEventListener('click', () => uploadToInput(btn.dataset.target));
