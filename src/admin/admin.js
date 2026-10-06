@@ -13,6 +13,7 @@ const TABS = [
   { id: 'news', label: 'News & Updates', icon: 'newspaper' },
   { id: 'gallery', label: 'Gallery', icon: 'images' },
   { id: 'dealers', label: 'Dealers Location', icon: 'map-pin' },
+  { id: 'testimonials', label: 'Testimonials', icon: 'message-square' },
   { id: 'reservation', label: 'Reservations', icon: 'calendar-check' },
   { id: 'contacts', label: 'Contact Messages', icon: 'mail' },
 ];
@@ -24,6 +25,7 @@ let newsData = [];
 let modelsAdminData = [];
 let dealersData = [];
 let galleryData = [];
+let testimonialsData = [];
 let settingsData = {};
 let editingModelIndex = -1;
 
@@ -136,6 +138,7 @@ function renderContent() {
     case 'models': initModelsTab(); break;
     case 'gallery': initGalleryTab(); break;
     case 'dealers': initDealersTab(); break;
+    case 'testimonials': initTestimonialsTab(); break;
     case 'reservation': initReservationTab(); break;
     case 'contacts': initContactTab(); break;
     default:
@@ -740,6 +743,128 @@ function renderDealerForm() {
       await adminApi.saveDealers(dealersData); 
       renderDealersTable();
     } catch (err) { alert('Error: ' + err.message); }
+  });
+}
+
+// ═══════════════════════════════════════════════════════════════════
+//  TESTIMONIALS
+// ═══════════════════════════════════════════════════════════════════
+async function initTestimonialsTab() {
+  const container = document.getElementById('content-area');
+  container.innerHTML = renderPlaceholderView('Testimonials', 'Loading...');
+  try {
+    const res = await fetch('/api/testimonials');
+    testimonialsData = await res.json();
+    renderTestimonialsTable();
+  } catch (e) { console.error(e); }
+}
+
+let editingTestimonialIndex = -1;
+
+function renderTestimonialsTable() {
+  const container = document.getElementById('content-area');
+  let rows = testimonialsData.map((t, i) => `
+    <tr>
+      <td><img src="${t.avatar || ''}" style="width: 50px; height: 50px; object-fit: cover; border-radius: 50%;"></td>
+      <td><strong>${t.name}</strong><br><small>${t.role || ''} - ${t.model || ''}</small></td>
+      <td>${'★'.repeat(t.rating || 5)}${'☆'.repeat(5 - (t.rating || 5))}</td>
+      <td>
+        <button class="btn btn-outline" style="padding: 4px 8px; margin-right: 5px;" data-action="edit-testimonial" data-index="${i}">Edit</button>
+        <button class="btn btn-outline" style="padding: 4px 8px; color: var(--danger); border-color: var(--danger)" data-action="delete-testimonial" data-index="${i}">Delete</button>
+      </td>
+    </tr>
+  `).join('');
+
+  container.innerHTML = `
+    <div class="dashboard-card">
+      <div class="card-header">
+        <h3 class="card-title">Manage Testimonials</h3>
+        <button class="btn btn-primary" id="add-testimonial-btn">+ Add Testimonial</button>
+      </div>
+      <table class="data-table">
+        <thead><tr><th>Avatar</th><th>Info</th><th>Rating</th><th width="120">Actions</th></tr></thead>
+        <tbody>${rows.length ? rows : '<tr><td colspan="4" class="empty-state">No testimonials found</td></tr>'}</tbody>
+      </table>
+    </div>
+  `;
+
+  document.getElementById('add-testimonial-btn').addEventListener('click', () => {
+    editingTestimonialIndex = -1;
+    renderTestimonialForm();
+  });
+
+  container.querySelectorAll('[data-action="edit-testimonial"]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      editingTestimonialIndex = parseInt(btn.dataset.index);
+      renderTestimonialForm();
+    });
+  });
+
+  container.querySelectorAll('[data-action="delete-testimonial"]').forEach(btn => {
+    btn.addEventListener('click', async () => {
+      if (confirm('Delete this testimonial?')) {
+        testimonialsData.splice(parseInt(btn.dataset.index), 1);
+        try { await adminApi.saveTestimonials(testimonialsData); renderTestimonialsTable(); }
+        catch (err) { alert('Error: ' + err.message); }
+      }
+    });
+  });
+  createIcons({ icons });
+}
+
+function renderTestimonialForm() {
+  const container = document.getElementById('content-area');
+  const t = editingTestimonialIndex === -1 ? { name: '', role: '', avatar: '', model: '', rating: 5, quote: '' } : testimonialsData[editingTestimonialIndex];
+  
+  container.innerHTML = `
+    <div class="dashboard-card">
+      <div class="card-header">
+        <h3 class="card-title">${editingTestimonialIndex === -1 ? 'Add Testimonial' : 'Edit Testimonial'}</h3>
+        <div>
+          <button class="btn btn-outline" id="cancel-testimonial-btn">Cancel</button>
+          <button class="btn btn-primary" id="save-testimonial-btn">Save</button>
+        </div>
+      </div>
+      <div style="padding-top: 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+        <div class="form-group"><label class="form-label">Customer Name</label><input type="text" id="t-name" class="form-control" value="${t.name || ''}"></div>
+        <div class="form-group"><label class="form-label">Role / Job</label><input type="text" id="t-role" class="form-control" value="${t.role || ''}" placeholder="e.g. Entrepreneur"></div>
+        <div class="form-group"><label class="form-label">Car Model</label><input type="text" id="t-model" class="form-control" value="${t.model || ''}" placeholder="e.g. JAECOO J7"></div>
+        <div class="form-group"><label class="form-label">Rating (1-5)</label><input type="number" id="t-rating" class="form-control" min="1" max="5" value="${t.rating || 5}"></div>
+        <div class="form-group" style="grid-column: 1 / -1;"><label class="form-label">Avatar Image URL</label>
+           <div style="display:flex;gap:5px;"><input type="text" id="t-avatar" class="form-control" value="${t.avatar || ''}"><button class="btn btn-outline upload-btn" style="padding:0 10px;" data-target="t-avatar">Upload</button></div>
+        </div>
+        <div class="form-group" style="grid-column: 1 / -1;"><label class="form-label">Testimony Text (Quote)</label><textarea id="t-quote" class="form-control" style="min-height: 80px;">${t.quote || ''}</textarea></div>
+      </div>
+    </div>
+  `;
+
+  document.getElementById('cancel-testimonial-btn').addEventListener('click', renderTestimonialsTable);
+  document.getElementById('save-testimonial-btn').addEventListener('click', async () => {
+    const newTestimonial = {
+      id: t.id || Date.now(),
+      name: document.getElementById('t-name').value,
+      role: document.getElementById('t-role').value,
+      model: document.getElementById('t-model').value,
+      rating: parseInt(document.getElementById('t-rating').value) || 5,
+      avatar: document.getElementById('t-avatar').value,
+      quote: document.getElementById('t-quote').value
+    };
+    if (!newTestimonial.name) return alert("Name is required");
+
+    if (editingTestimonialIndex === -1) {
+      testimonialsData.push(newTestimonial);
+    } else {
+      testimonialsData[editingTestimonialIndex] = newTestimonial;
+    }
+
+    try { 
+      await adminApi.saveTestimonials(testimonialsData); 
+      renderTestimonialsTable();
+    } catch (err) { alert('Error: ' + err.message); }
+  });
+
+  container.querySelectorAll('.upload-btn').forEach(btn => {
+    btn.addEventListener('click', () => uploadToInput(btn.dataset.target));
   });
 }
 
