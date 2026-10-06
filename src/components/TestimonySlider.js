@@ -42,7 +42,7 @@ export const initTestimonyEvents = () => {
   
   if(!track || !prevBtn || !nextBtn) return;
   
-  const cardWidth = 450 + 32; // card width + gap (2rem = 32px)
+  const cardWidth = 380 + 32; // card width + gap (2rem = 32px)
   
   const maxScroll = track.scrollWidth - track.parentElement.clientWidth;
 
