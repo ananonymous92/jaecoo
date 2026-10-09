@@ -12,7 +12,7 @@
 }
 
 .site-header.scrolled {
-  background-color: rgba(12, 12, 14, 0.88);
+  background-color: var(--header-bg, rgba(12, 12, 14, 0.88));
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   padding: 1rem 0;
@@ -317,7 +317,7 @@
   left: 0;
   width: 100%;
   height: 100vh;
-  background: rgba(8, 8, 10, 0.98);
+  background: var(--color-surface-1);
   backdrop-filter: blur(25px);
   z-index: 2900;
   display: flex;
@@ -354,7 +354,7 @@
   align-items: center;
   justify-content: space-between;
   padding-bottom: 0.75rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid var(--color-border-light);
 }
 
 .mobile-nav-link:hover {
@@ -398,4 +398,56 @@
   .hamburger-btn {
     display: flex;
   }
+}
+
+/* Force light text when header is transparent (over dark hero) */
+[data-theme="light"] .site-header:not(.scrolled):not(.menu-open) .nav-link {
+  color: #E8E8E8;
+}
+
+[data-theme="light"] .site-header:not(.scrolled):not(.menu-open) .nav-link:hover,
+[data-theme="light"] .site-header:not(.scrolled):not(.menu-open) .nav-link.active {
+  color: #FFFFFF;
+}
+
+[data-theme="light"] .site-header:not(.scrolled):not(.menu-open) .logo-text,
+[data-theme="light"] .site-header:not(.scrolled):not(.menu-open) .dropdown-icon {
+  color: #FFFFFF;
+}
+
+[data-theme="light"] .site-header:not(.scrolled):not(.menu-open) .lang-btn {
+  color: #E8E8E8;
+}
+
+[data-theme="light"] .site-header:not(.scrolled):not(.menu-open) .lang-btn.active {
+  background: #FFFFFF;
+  color: #080808;
+}
+
+[data-theme="light"] .site-header:not(.scrolled):not(.menu-open) .theme-btn {
+  color: #FFFFFF;
+}
+
+[data-theme="light"] .site-header:not(.scrolled):not(.menu-open) .hamburger-line {
+  background-color: #FFFFFF;
+}
+
+/* Light mode mobile drawer fix: when active, header is over drawer */
+[data-theme="light"] .mobile-nav-drawer {
+  background: rgba(255, 255, 255, 0.98);
+}
+
+/* Dropdown tweaks for light mode */
+[data-theme="light"] .simple-dropdown {
+  background: rgba(255, 255, 255, 0.95);
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="light"] .dropdown-link {
+  color: #1F2937;
+}
+
+[data-theme="light"] .dropdown-link:hover {
+  background: rgba(0, 0, 0, 0.05);
+  color: #080808;
 }

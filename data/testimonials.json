@@ -1,38 +1,29 @@
 [
   {
     "id": 1,
-    "name": "Rendra Kusuma",
-    "role": "Senior Automotive Journalist, AutoSphere",
-    "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80",
+    "name": "Risma",
+    "role": "Customer",
     "model": "JAECOO J7 SHS-P",
     "rating": 5,
-    "quote": "JAECOO J7 memberikan pengalaman berkendara yang sangat luar biasa. Transisi tenaga antara motor listrik dan mesin bensin turbo SHS nyaris tanpa jeda. Kekedapan kabinnya menyamai standar SUV mewah Eropa di harga yang sangat kompetitif."
+    "avatar": "/images/upload-1791269561426-709897630.jpeg",
+    "quote": "Pelayanan dari Jaecoo Tangerang luar biasa! Proses serah terima mobil sangat cepat, mudah, dan ramah. Kami sangat puas dengan mobil barunya. Terima kasih Jaecoo Tangerang"
   },
   {
     "id": 2,
-    "name": "Dr. Amanda Saraswati",
-    "role": "Entrepreneur & Urban Explorer",
-    "avatar": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=300&q=80",
+    "name": "Putri",
+    "role": "Customer",
     "model": "JAECOO J5 EV",
     "rating": 5,
-    "quote": "Sebagai pengguna mobil listrik harian di Jakarta, J5 EV memberikan rasa percaya diri berkat ground clearance yang tinggi saat melewati genangan dan interior pet-friendly yang ramah untuk anjing golden retriever saya."
+    "avatar": "/images/upload-1791269533993-692241011.jpeg",
+    "quote": "Mantap! Beli mobil di Jaecoo Tangerang nggak pakai ribet. Pelayanannya top, responsif, dan serah terima berjalan sangat lancar. Sangat memuaskan"
   },
   {
-    "id": 3,
-    "name": "Bambang Widyantoro",
-    "role": "Managing Partner, Investment Advisory",
-    "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80",
-    "model": "JAECOO J8 SHS-P ARDIS",
+    "id": 1791269703613,
+    "name": "Richi",
+    "role": "Customer",
+    "model": "Jaecoo J5 EV",
     "rating": 5,
-    "quote": "Sistem suspensi aktif CDC Magnetic Levitation pada J8 ARDIS sungguh memukau. Perjalanan jarak jauh dari Jakarta ke Surabaya terasa sangat rileks seperti duduk di kursi first-class lounge."
-  },
-  {
-    "id": 4,
-    "name": "Farhan Mahendra",
-    "role": "Overland Enthusiast & Landscape Photographer",
-    "avatar": "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=300&q=80",
-    "model": "JAECOO J7 SHS-P",
-    "rating": 5,
-    "quote": "Kamera 540° Transparent Chassis sangat membantu ketika bermanuver di jalan bebatuan pegunungan tanpa takut merusak kolong mobil. Daya jelajah lebih dari 1.000 km menghapus kekhawatiran kehabisan bahan bakar saat camping di pelosok."
+    "avatar": "/images/upload-1791269693501-598331250.jpeg",
+    "quote": "Sangat puas dengan pengalaman beli mobil di Jaecoo Tangerang. Mobil diantar dengan aman dan kondisinya sempurna. Highly recommended! 👍"
   }
 ]

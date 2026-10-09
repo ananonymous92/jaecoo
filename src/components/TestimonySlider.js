@@ -38,25 +38,25 @@ export const initTestimonyEvents = () => {
   const track = document.getElementById('testimony-track');
   const prevBtn = document.getElementById('testimony-prev');
   const nextBtn = document.getElementById('testimony-next');
-  let scrollPos = 0;
   
   if(!track || !prevBtn || !nextBtn) return;
   
-  const cardWidth = 380 + 32; // card width + gap (2rem = 32px)
-  
-  const maxScroll = track.scrollWidth - track.parentElement.clientWidth;
+  const getCardWidth = () => {
+    const card = track.querySelector('.testimony-card');
+    // Card width + 2rem gap
+    return card ? card.offsetWidth + 32 : 412;
+  };
 
   prevBtn.addEventListener('click', () => {
-    scrollPos = Math.max(scrollPos - cardWidth, 0);
-    track.style.transform = `translateX(-${scrollPos}px)`;
+    track.scrollBy({ left: -getCardWidth(), behavior: 'smooth' });
   });
 
   nextBtn.addEventListener('click', () => {
-    scrollPos = Math.min(scrollPos + cardWidth, maxScroll);
-    if(scrollPos >= maxScroll - 10) {
-      // Loop back if at the end for infinite feel
-      scrollPos = 0;
+    // If near the end, loop back
+    if (track.scrollLeft + track.clientWidth >= track.scrollWidth - 10) {
+      track.scrollTo({ left: 0, behavior: 'smooth' });
+    } else {
+      track.scrollBy({ left: getCardWidth(), behavior: 'smooth' });
     }
-    track.style.transform = `translateX(-${scrollPos}px)`;
   });
 };

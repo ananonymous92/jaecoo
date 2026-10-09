@@ -7,7 +7,7 @@
     "tagline": "This is The Real SUV",
     "shortDesc": "SUV listrik murni berkarakter tangguh yang menggabungkan mobilitas ramah lingkungan, desain boxy modern, dan kecerdasan kokpit masa depan.",
     "price": "Mulai Rp 279.900.000(Est.)",
-    "heroImage": "/images/upload-1790694882291-68117556.avif",
+    "heroImage": "/images/upload-1790792023351-309670188.avif",
     "cardImage": "/images/upload-1790736625907-865208552.avif",
     "badge": "100% PURE ELECTRIC",
     "powertrain": "Permanent Magnet Synchronous Motor",
@@ -16,7 +16,7 @@
       "torque": "288N.m",
       "battery": "60.9 kWh Lithium Ferro Phosphate (LFP)",
       "evRange": "420 km (CLTC)",
-      "drivingRange": "420 km",
+      "drivingRange": "461 km",
       "acceleration": "0-100 km/h dalam 7.6 detik",
       "driveSystem": "Front-Wheel Drive (FWD)",
       "groundClearance": "200mm",
@@ -74,7 +74,7 @@
         "desc": "Layar infotainment 13.2 inci terintegrasi Qualcomm Snapdragon 8155 dengan antarmuka futuristik responsif dan voice command AI."
       },
       {
-        "title": "BYD Blade Battery 60.9 kWh",
+        "title": "Lithium Ferro Phosphate (LFP) Battery 60.9 kWh",
         "desc": "Teknologi baterai ultra-safe Lithium Ferro Phosphate (LFP) dengan ketahanan thermal superior, siklus hidup lebih panjang, dan garansi 8 tahun."
       },
       {
@@ -99,10 +99,9 @@
       "Wading depth 450mm untuk kemampuan melewati genangan air"
     ],
     "gallery": [
-      "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?auto=format&fit=crop&w=1200&q=85",
-      "https://images.unsplash.com/photo-1558618666-fcd25c85f82e?auto=format&fit=crop&w=1200&q=85",
-      "https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?auto=format&fit=crop&w=1200&q=85",
-      "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=85"
+      "/images/upload-1790840819220-402960414.avif",
+      "/images/upload-1790840870366-792447837.avif",
+      "/images/upload-1790840873947-269393214.avif"
     ],
     "hotspots": [],
     "interiorImage": "/images/upload-1790694916220-764141247.avif"
@@ -115,16 +114,16 @@
     "tagline": "POWER MEETS EFFICIENCY",
     "shortDesc": "SUV hybrid plug-in premium dengan perpaduan siluet tangguh waterfall grille, teknologi Super Hybrid System generasi ke-5, dan daya jelajah komprehensif lebih dari 1.200 km.",
     "price": "Mulai Rp 514.900.000 (Est.)",
-    "heroImage": "/images/upload-1790694637322-568924708.avif",
+    "heroImage": "/images/upload-1790792037687-414206129.avif",
     "cardImage": "/images/upload-1790736650777-854949291.avif",
     "badge": "SUPER HYBRID SYSTEM (PHEV)",
     "powertrain": "1.5 TGDI Turbo Hybrid Engine + Dual Electric Motors + DHT",
     "specs": {
-      "power": "255 kW (342 HP) Combined",
+      "power": "255 kW (347 HP) Combined",
       "torque": "525 Nm Combined",
       "battery": "18.3 kWh Dedicated Hybrid Lithium Ferro Phosphate (LFP)",
       "evRange": "98 km (Pure Electric)",
-      "drivingRange": "> 1.200 km (PHEV Combined)",
+      "drivingRange": "> 1.300 km (PHEV Combined)",
       "acceleration": "0-100 km/h dalam 6.8 detik",
       "driveSystem": "Intelligent All-Wheel Drive / FWD Optional",
       "groundClearance": "200 mm",
@@ -190,10 +189,12 @@
       "Dual Exhaust Decorative Trim bernuansa sporty futuristik"
     ],
     "gallery": [
-      "/images/hero_j7.jpg",
-      "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=85",
-      "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=1200&q=85",
-      "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=1200&q=85"
+      "/images/upload-1790840942745-65650080.avif",
+      "/images/upload-1790840946736-238131458.avif",
+      "/images/upload-1790840957614-441766470.avif",
+      "/images/upload-1790840962655-76197186.avif",
+      "/images/upload-1790840978245-349393860.avif",
+      "/images/upload-1790841016905-266051705.avif"
     ],
     "trims": [],
     "hotspots": [],
@@ -207,7 +208,7 @@
     "tagline": "COMMAND EVERY TERRAIN",
     "shortDesc": "Flagship luxury SUV dengan sistem penggerak cerdas ARDIS (All-Road Drive Intelligent System), suspensi aktif CDC Magnetic Levitation, dan kenyamanan lounge kelas satu.",
     "price": "Mulai Rp 838.000.000 (Est.)",
-    "heroImage": "/images/upload-1790736383330-716811606.avif",
+    "heroImage": "/images/upload-1790792049328-226347303.avif",
     "cardImage": "/images/upload-1790736550843-391717029.avif",
     "badge": "FLAGSHIP AWD ARDIS",
     "powertrain": "2.0 TGDI Turbo Hybrid + Triple Electric Motors + 3DHT All-Wheel Drive",
@@ -216,7 +217,7 @@
       "torque": "650 Nm",
       "battery": "34.46 kWh Lithium Ferro Phosphate (LFP)",
       "evRange": "160 km (Pure Electric)",
-      "drivingRange": "> 1.300 km (Combined Range)",
+      "drivingRange": "> 1.660 km (Combined Range)",
       "acceleration": "0-100 km/h dalam 5.4 detik",
       "driveSystem": "ARDIS Intelligent All-Terrain AWD (7 Driving Modes)",
       "groundClearance": "220 mm",
@@ -277,10 +278,12 @@
       "Panoramic Roof seluas 1.4 m² dengan solar heat rejection hingga 99%"
     ],
     "gallery": [
-      "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=1200&q=85",
-      "https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=1200&q=85",
-      "https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=1200&q=85",
-      "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=1200&q=85"
+      "/images/upload-1790841083995-427954546.avif",
+      "/images/upload-1790841086302-247003502.avif",
+      "/images/upload-1790841091839-937074877.avif",
+      "/images/upload-1790841098624-458734272.avif",
+      "/images/upload-1790841108929-852420872.avif",
+      "/images/upload-1790841116194-553674443.avif"
     ],
     "trims": [],
     "hotspots": [],

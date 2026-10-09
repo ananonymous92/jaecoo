@@ -16,6 +16,12 @@
   <link rel="icon" type="image/png" href="/images/logo.png">
   <link rel="canonical" href="https://www.jaecootangerang.com/">
 
+  <!-- Theme Initialization -->
+  <script>
+    const savedTheme = localStorage.getItem('jaecoo-theme') || 'dark';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+  </script>
+
   <!-- Schema Markup / JSON-LD for Local Business -->
   <script type="application/ld+json">
   {

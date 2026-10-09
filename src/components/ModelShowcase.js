@@ -112,13 +112,13 @@ export const renderModelDetailView = (slug) => {
 
         <!-- ═══ SPECS / POWERTRAIN ═══ -->
         ${model.specs ? `
-        <div style="padding: 5rem 0; background: #0a0a0a; color: #fff;">
+        <div style="padding: 5rem 0; background: var(--color-deep-black); color: var(--color-white);">
           <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
             <div style="text-align:center; margin-bottom: 3.5rem;">
               <span style="color:#00D2C4; font-size:0.75rem; letter-spacing:0.2em; font-weight:600; text-transform:uppercase;">${model.powertrain ? 'POWERTRAIN' : 'SPECIFICATIONS'}</span>
               <h2 style="font-size: clamp(1.8rem, 3vw, 2.5rem); font-weight:700; margin-top:0.5rem; letter-spacing:-0.02em;">${model.powertrain || 'TECHNICAL SPECS'}</h2>
             </div>
-            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap:1px; background:rgba(255,255,255,0.08); border-radius:16px; overflow:hidden;">
+            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap:1px; background:var(--color-border-light); border-radius:16px; overflow:hidden;">
               ${Object.entries(model.specs).filter(([key]) => !['wadingDepth'].includes(key)).map(([key, value]) => {
       const labels = {
         power: 'Max Power', torque: 'Max Torque', battery: 'Battery', evRange: 'EV Range',
@@ -132,7 +132,7 @@ export const renderModelDetailView = (slug) => {
         groundClearance: 'arrow-up-from-line', chargingTime: 'plug-zap', energyEfficiency: 'leaf'
       };
       return `
-                <div style="background:#111; padding:1.5rem; text-align:center;">
+                <div style="background:var(--color-surface-1); padding:1.5rem; text-align:center;">
                   <i data-lucide="${specIcons[key] || 'info'}" style="width:22px; height:22px; color:#00D2C4; margin-bottom:0.6rem;"></i>
                   <div style="font-size:0.7rem; color:#888; letter-spacing:0.1em; text-transform:uppercase; margin-bottom:0.4rem;">${labels[key] || key}</div>
                   <div style="font-size:0.95rem; font-weight:600; line-height:1.3;">${value}</div>
@@ -145,16 +145,16 @@ export const renderModelDetailView = (slug) => {
 
         <!-- ═══ COLOR PICKER ═══ -->
         ${model.colors && model.colors.length > 0 ? `
-        <div class="model-page-colors" style="padding: 5rem 0; background: #fff; color: #000; text-align: center; width: 100%;">
+        <div class="model-page-colors" style="padding: 5rem 0; background: var(--color-white); color: var(--color-deep-black); text-align: center; width: 100%;">
           <div style="text-align:center; margin-bottom: 2.5rem;">
             <span style="color:#00D2C4; font-size:0.75rem; letter-spacing:0.2em; font-weight:600;">PILIH WARNA ANDA</span>
-            <h2 style="font-size:1.8rem; font-weight:700; margin-top:0.5rem; color:#111;">EXTERIOR COLORS</h2>
+            <h2 style="font-size:1.8rem; font-weight:700; margin-top:0.5rem; color:var(--color-deep-black);">EXTERIOR COLORS</h2>
           </div>
           <div class="color-preview-container" style="max-width:900px; margin: 0 auto; position: relative; display: flex; justify-content: center;">
             <img src="${model.colors[0].img}" id="active-color-img" class="model-color-car-img" style="width:100%; max-width:800px; transition: opacity 0.3s ease; position: relative; z-index: 2;">
             <div style="position: absolute; bottom: 5%; left: 15%; right: 15%; height: 25px; background: radial-gradient(ellipse at center, rgba(0,0,0,0.4) 0%, transparent 70%); z-index: 1;"></div>
           </div>
-          <h2 id="active-color-title" style="font-weight:400; letter-spacing:0.4em; font-size: 1.1rem; margin: 2rem auto 1.5rem auto; text-transform: uppercase; color: #111; text-align: center;">${model.colors[0].name}</h2>
+          <h2 id="active-color-title" style="font-weight:400; letter-spacing:0.4em; font-size: 1.1rem; margin: 2rem auto 1.5rem auto; text-transform: uppercase; color: var(--color-deep-black); text-align: center;">${model.colors[0].name}</h2>
           <style>
             .color-swatch-wrap { width: 32px; height: 32px; border-radius: 50%; padding: 3px; border: 2px solid transparent; cursor: pointer; transition: all 0.3s ease; }
             .color-swatch-wrap:hover { transform: scale(1.15); }
@@ -172,7 +172,7 @@ export const renderModelDetailView = (slug) => {
 
         <!-- ═══ KEY FEATURES ═══ -->
         ${model.keyFeatures && model.keyFeatures.length > 0 ? `
-        <div style="padding: 5rem 0; background: #0a0a0a; color: #fff;">
+        <div style="padding: 5rem 0; background: var(--color-deep-black); color: var(--color-white);">
           <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
             <div style="text-align:center; margin-bottom: 3.5rem;">
               <span style="color:#00D2C4; font-size:0.75rem; letter-spacing:0.2em; font-weight:600;">KEY FEATURES</span>
@@ -182,12 +182,12 @@ export const renderModelDetailView = (slug) => {
               ${model.keyFeatures.map((feat, i) => {
       const featureIcons = ['cpu', 'shield-check', 'eye', 'music', 'settings', 'zap', 'compass', 'star'];
       return `
-                <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08); border-radius:16px; padding:2rem; transition: transform 0.3s ease, border-color 0.3s ease;" onmouseover="this.style.transform='translateY(-4px)'; this.style.borderColor='rgba(0,210,196,0.3)'" onmouseout="this.style.transform=''; this.style.borderColor='rgba(255,255,255,0.08)'">
+                <div style="background:var(--color-surface-1); border:1px solid var(--color-border-light); border-radius:16px; padding:2rem; transition: transform 0.3s ease, border-color 0.3s ease;" onmouseover="this.style.transform='translateY(-4px)'; this.style.borderColor='rgba(0,210,196,0.3)'" onmouseout="this.style.transform=''; this.style.borderColor='var(--color-border-light)'">
                   <div style="width:48px; height:48px; background:rgba(0,210,196,0.1); border-radius:12px; display:flex; align-items:center; justify-content:center; margin-bottom:1.2rem;">
                     <i data-lucide="${featureIcons[i % featureIcons.length]}" style="width:24px; height:24px; color:#00D2C4;"></i>
                   </div>
                   <h3 style="font-size:1.1rem; font-weight:600; margin-bottom:0.6rem; letter-spacing:0.02em;">${feat.title}</h3>
-                  <p style="font-size:0.9rem; color:rgba(255,255,255,0.6); line-height:1.6;">${feat.desc}</p>
+                  <p style="font-size:0.9rem; color:var(--color-soft-gray); line-height:1.6;">${feat.desc}</p>
                 </div>`;
     }).join('')}
             </div>
@@ -197,29 +197,29 @@ export const renderModelDetailView = (slug) => {
 
         <!-- ═══ INTERIOR FEATURES ═══ -->
         ${model.interiorFeatures && model.interiorFeatures.length > 0 ? `
-        <div style="padding: 5rem 0; background: #fff; color: #000;">
+        <div style="padding: 5rem 0; background: var(--color-white); color: var(--color-deep-black);">
           <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
             <div style="display:grid; grid-template-columns: 1fr 1fr; gap:4rem; align-items:start;">
               <div>
                 <span style="color:#00D2C4; font-size:0.75rem; letter-spacing:0.2em; font-weight:600;">INTERIOR</span>
-                <h2 style="font-size: clamp(1.6rem, 2.5vw, 2.2rem); font-weight:700; margin-top:0.5rem; color:#111; margin-bottom:2rem;">CRAFTED LUXURY WITHIN</h2>
+                <h2 style="font-size: clamp(1.6rem, 2.5vw, 2.2rem); font-weight:700; margin-top:0.5rem; color:var(--color-deep-black); margin-bottom:2rem;">CRAFTED LUXURY WITHIN</h2>
                 <div style="display:flex; flex-direction:column; gap:1rem;">
                   ${model.interiorFeatures.map(feat => `
                     <div style="display:flex; align-items:flex-start; gap:1rem; padding:1rem; background:rgba(0,0,0,0.02); border-radius:12px; border-left:3px solid #00D2C4;">
                       <i data-lucide="check" style="width:18px; height:18px; color:#00D2C4; flex-shrink:0; margin-top:2px;"></i>
-                      <span style="font-size:0.95rem; color:#333; line-height:1.5;">${feat}</span>
+                      <span style="font-size:0.95rem; color:var(--color-deep-black); line-height:1.5;">${feat}</span>
                     </div>
                   `).join('')}
                 </div>
               </div>
               <div>
                 <span style="color:#00D2C4; font-size:0.75rem; letter-spacing:0.2em; font-weight:600;">EXTERIOR</span>
-                <h2 style="font-size: clamp(1.6rem, 2.5vw, 2.2rem); font-weight:700; margin-top:0.5rem; color:#111; margin-bottom:2rem;">BOLD DESIGN LANGUAGE</h2>
+                <h2 style="font-size: clamp(1.6rem, 2.5vw, 2.2rem); font-weight:700; margin-top:0.5rem; color:var(--color-deep-black); margin-bottom:2rem;">BOLD DESIGN LANGUAGE</h2>
                 <div style="display:flex; flex-direction:column; gap:1rem;">
                   ${(model.exteriorFeatures || []).map(feat => `
                     <div style="display:flex; align-items:flex-start; gap:1rem; padding:1rem; background:rgba(0,0,0,0.02); border-radius:12px; border-left:3px solid #111;">
                       <i data-lucide="check" style="width:18px; height:18px; color:#111; flex-shrink:0; margin-top:2px;"></i>
-                      <span style="font-size:0.95rem; color:#333; line-height:1.5;">${feat}</span>
+                      <span style="font-size:0.95rem; color:var(--color-deep-black); line-height:1.5;">${feat}</span>
                     </div>
                   `).join('')}
                 </div>
@@ -231,11 +231,11 @@ export const renderModelDetailView = (slug) => {
 
         <!-- ═══ INTERIOR HOTSPOTS ═══ -->
         ${model.interiorImage ? `
-        <div class="model-page-interior" style="position:relative; width:100%; background: #000; overflow:hidden;">
+        <div class="model-page-interior" style="position:relative; width:100%; background: var(--color-deep-black); overflow:hidden;">
            <img src="${model.interiorImage}" style="width:100%; height:auto; display:block;">
            <div class="hotspots-container" style="position:absolute; top:0; left:0; width:100%; height:100%;">
              ${(model.hotspots || []).map(h => `
-               <div class="hotspot" style="position:absolute; top:${h.top}%; left:${h.left}%; transform:translate(-50%, -50%); display:flex; align-items:center; gap:0.5rem; background:#fff; padding:0.6rem 1.2rem; border-radius:24px; color:#000; font-weight:500; font-size:0.85rem; cursor:pointer; box-shadow:0 10px 25px rgba(0,0,0,0.2); transition:transform 0.3s ease;" onmouseover="this.style.transform='translate(-50%, -50%) scale(1.05)'" onmouseout="this.style.transform='translate(-50%, -50%) scale(1)'">
+               <div class="hotspot" style="position:absolute; top:${h.top}%; left:${h.left}%; transform:translate(-50%, -50%); display:flex; align-items:center; gap:0.5rem; background:var(--color-white); padding:0.6rem 1.2rem; border-radius:24px; color:var(--color-deep-black); font-weight:500; font-size:0.85rem; cursor:pointer; box-shadow:0 10px 25px rgba(0,0,0,0.2); transition:transform 0.3s ease;" onmouseover="this.style.transform='translate(-50%, -50%) scale(1.05)'" onmouseout="this.style.transform='translate(-50%, -50%) scale(1)'">
                  <i data-lucide="plus-circle" style="width:18px; height:18px;"></i> ${h.label}
                </div>
              `).join('')}
@@ -245,7 +245,7 @@ export const renderModelDetailView = (slug) => {
 
         <!-- ═══ GALLERY ═══ -->
         ${model.gallery && model.gallery.length > 0 ? `
-        <div style="padding: 5rem 0; background: #0a0a0a; color: #fff;">
+        <div style="padding: 5rem 0; background: var(--color-deep-black); color: var(--color-white);">
           <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
             <div style="text-align:center; margin-bottom: 3rem;">
               <span style="color:#00D2C4; font-size:0.75rem; letter-spacing:0.2em; font-weight:600;">GALLERY</span>
@@ -264,23 +264,23 @@ export const renderModelDetailView = (slug) => {
 
         <!-- ═══ TRIMS ═══ -->
         ${model.trims && model.trims.length > 0 ? `
-        <div class="model-page-trims text-center" style="padding: 5rem 0; background: #fff; color: #000; text-align: center;">
+        <div class="model-page-trims text-center" style="padding: 5rem 0; background: var(--color-white); color: var(--color-deep-black); text-align: center;">
            <div style="text-align:center; margin-bottom: 3.5rem;">
              <span style="color:#00D2C4; font-size:0.75rem; letter-spacing:0.2em; font-weight:600;">CHOOSE YOURS</span>
-             <h2 style="font-size: clamp(1.6rem, 2.5vw, 2.2rem); font-weight:700; margin-top:0.5rem; color:#111;">PILIH ${model.name} ANDA</h2>
+             <h2 style="font-size: clamp(1.6rem, 2.5vw, 2.2rem); font-weight:700; margin-top:0.5rem; color:var(--color-deep-black);">PILIH ${model.name} ANDA</h2>
            </div>
            <div class="container" style="display:flex; justify-content:center; gap:3rem; flex-wrap:wrap; max-width: 1200px; margin: 0 auto;">
              ${model.trims.map(trim => `
-               <div class="trim-card" style="flex:1; min-width:300px; max-width:480px; display: flex; flex-direction: column; align-items: center; background:rgba(0,0,0,0.02); border-radius:16px; padding:2rem; border:1px solid rgba(0,0,0,0.06);">
+               <div class="trim-card" style="flex:1; min-width:300px; max-width:480px; display: flex; flex-direction: column; align-items: center; background:var(--color-surface-1); border-radius:16px; padding:2rem; border:1px solid var(--color-border-light);">
                  <div style="position: relative; width: 100%; margin-bottom: 1.5rem;">
                    <img src="${trim.img}" style="width:100%; position: relative; z-index: 2;">
                    <div style="position: absolute; bottom: 8%; left: 15%; right: 15%; height: 25px; background: radial-gradient(ellipse at center, rgba(0,0,0,0.5) 0%, transparent 70%); z-index: 1;"></div>
                  </div>
-                 <h3 style="font-weight:600; margin-bottom:1rem; font-size:1.2rem; color: #111;">${trim.name}</h3>
-                 <ul style="list-style:none; padding:0; margin:0 0 1.5rem 0; font-size:0.85rem; color:#555; line-height: 2; text-align:left; width:100%;">
+                 <h3 style="font-weight:600; margin-bottom:1rem; font-size:1.2rem; color: var(--color-deep-black);">${trim.name}</h3>
+                 <ul style="list-style:none; padding:0; margin:0 0 1.5rem 0; font-size:0.85rem; color:var(--color-soft-gray); line-height: 2; text-align:left; width:100%;">
                    ${trim.features.map(f => `<li style="display:flex; align-items:center; gap:0.5rem;"><i data-lucide="check-circle-2" style="width:14px; height:14px; color:#00D2C4; flex-shrink:0;"></i> ${f}</li>`).join('')}
                  </ul>
-                 <h4 style="font-weight:700; font-size:1.4rem; color:#000;">${trim.price}</h4>
+                 <h4 style="font-weight:700; font-size:1.4rem; color:var(--color-deep-black);">${trim.price}</h4>
                </div>
              `).join('')}
            </div>
@@ -288,7 +288,7 @@ export const renderModelDetailView = (slug) => {
         ` : ''}
 
         <!-- ═══ CTA SECTION ═══ -->
-        <div style="padding: 5rem 0; background: linear-gradient(135deg, #0a0a0a 0%, #111 50%, #0a1a1a 100%); color: #fff; text-align:center;">
+        <div style="padding: 5rem 0; background: linear-gradient(135deg, var(--color-deep-black) 0%, var(--color-surface-1) 50%, var(--color-deep-black) 100%); color: var(--color-white); text-align:center;">
           <div class="container" style="max-width: 800px; margin: 0 auto; padding: 0 2rem;">
             <h2 style="font-size: clamp(1.8rem, 3vw, 2.5rem); font-weight:700; margin-bottom:1rem;">INTERESTED IN ${model.name}?</h2>
             <p style="color:rgba(255,255,255,0.6); font-size:1rem; margin-bottom:2rem; line-height:1.6;">Jadwalkan test drive dan rasakan langsung performa serta teknologi ${model.name}.</p>

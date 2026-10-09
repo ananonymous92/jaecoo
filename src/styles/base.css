@@ -230,7 +230,8 @@ img, video {
 .btn-outline {
   background: transparent;
   color: var(--color-white);
-  border-color: rgba(255, 255, 255, 0.25);
+  border-color: var(--color-border-light);
+  border-width: 1px;
   backdrop-filter: blur(10px);
 }
 

@@ -29,6 +29,10 @@ export const renderHeader = (t, modelsData = []) => {
       </nav>
 
       <div class="header-actions">
+        <button class="theme-btn" id="theme-toggle-btn" aria-label="Toggle Theme" style="background: none; border: none; color: inherit; cursor: pointer; padding: 0.5rem; display: flex; align-items: center; justify-content: center; border-radius: 50%;">
+          <i data-lucide="sun" class="theme-icon-light" style="display: none;"></i>
+          <i data-lucide="moon" class="theme-icon-dark"></i>
+        </button>
         <div class="lang-switch">
           <button class="lang-btn ${window.appState.lang === 'id' ? 'active' : ''}" data-lang="id">ID</button>
           <button class="lang-btn ${window.appState.lang === 'en' ? 'active' : ''}" data-lang="en">EN</button>
@@ -91,6 +95,7 @@ export const initHeaderEvents = () => {
     mobileBtn.addEventListener('click', () => {
       mobileBtn.classList.toggle('active');
       mobileDrawer.classList.toggle('active');
+      header.classList.toggle('menu-open');
       document.body.style.overflow = mobileDrawer.classList.contains('active') ? 'hidden' : '';
     });
 
@@ -98,6 +103,7 @@ export const initHeaderEvents = () => {
       link.addEventListener('click', () => {
         mobileBtn.classList.remove('active');
         mobileDrawer.classList.remove('active');
+        header.classList.remove('menu-open');
         document.body.style.overflow = '';
       });
     });
@@ -112,4 +118,32 @@ export const initHeaderEvents = () => {
       }
     });
   });
+
+  // Theme toggler
+  const themeBtn = document.getElementById('theme-toggle-btn');
+  if (themeBtn) {
+    const updateThemeIcon = (theme) => {
+      const sun = themeBtn.querySelector('.theme-icon-light');
+      const moon = themeBtn.querySelector('.theme-icon-dark');
+      if (theme === 'light') {
+        if(sun) sun.style.display = 'block';
+        if(moon) moon.style.display = 'none';
+      } else {
+        if(sun) sun.style.display = 'none';
+        if(moon) moon.style.display = 'block';
+      }
+    };
+    
+    // Initial icon state
+    const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+    updateThemeIcon(currentTheme);
+    
+    themeBtn.addEventListener('click', () => {
+      const current = document.documentElement.getAttribute('data-theme') || 'dark';
+      const newTheme = current === 'light' ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', newTheme);
+      localStorage.setItem('jaecoo-theme', newTheme);
+      updateThemeIcon(newTheme);
+    });
+  }
 };

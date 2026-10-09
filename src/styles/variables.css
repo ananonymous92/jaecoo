@@ -13,6 +13,8 @@
   --color-border-light: rgba(255, 255, 255, 0.08);
   --color-border-hover: rgba(0, 210, 196, 0.35);
   
+  --header-bg: rgba(12, 12, 14, 0.88);
+  
   /* Metallic Grays */
   --color-metallic-silver: #D4D8DE;
   --color-metallic-dark: #2B2F36;
@@ -50,4 +52,36 @@
   --transition-fast: 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   --transition-smooth: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   --transition-slow: 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Light Mode Overrides */
+[data-theme="light"] {
+  color-scheme: light;
+  --color-deep-black: #FFFFFF;
+  --color-dark-charcoal: #F8F9FA;
+  --color-surface-1: #F3F4F6;
+  --color-surface-2: #E5E7EB;
+  --color-surface-3: #D1D5DB;
+  
+  --color-white: #080808;
+  --color-light-gray: #1F2937;
+  --color-soft-gray: #4B5563;
+  --color-muted-gray: #6B7280;
+  --color-border-light: rgba(0, 0, 0, 0.1);
+  --color-border-hover: rgba(0, 210, 196, 0.5);
+  
+  --header-bg: rgba(255, 255, 255, 0.88);
+  
+  --color-metallic-silver: #4B5563;
+  --color-metallic-dark: #D1D5DB;
+  
+  --shadow-subtle: 0 4px 20px rgba(0, 0, 0, 0.05);
+  --shadow-elevated: 0 12px 40px rgba(0, 0, 0, 0.1);
+  --shadow-glow: 0 0 25px rgba(0, 210, 196, 0.4);
+  --shadow-card: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="light"] .site-header.scrolled .brand-logo img,
+[data-theme="light"] .site-header.menu-open .brand-logo img {
+  filter: brightness(0) !important;
 }

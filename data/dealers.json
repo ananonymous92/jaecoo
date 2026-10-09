@@ -1,20 +1,11 @@
 [
   {
-    "id": "dealer-bsd",
-    "name": "JAECOO BSD City",
-    "city": "Tangerang",
-    "region": "Jabodetabek",
-    "address": "Kawasan Komersial Foresta Business Loft 5 No. 1-3, BSD City, Tangerang, Banten 15331",
-    "phone": "+62 21 531 6655",
-    "whatsapp": "628118800994",
-    "hours": "Senin - Minggu: 08:30 - 20:00 WIB",
-    "lat": -6.3021,
-    "lng": 106.6528,
-    "facilities": [
-      "Showroom 3S",
-      "Super Hybrid Service Bay",
-      "EV Fast Charging 60kW",
-      "Outdoor Terrace"
-    ]
+    "name": "JAECOO SERPONG TANGERANG SELATAN",
+    "city": "Tangerang Selatan",
+    "phone": "+62 813-3838-4136",
+    "whatsapp": "6281338384136",
+    "address": "Jl. Raya Serpong Kilometer 7 No.55, RT.6/RW.3, Pakulonan, Kec. Serpong Utara, Kota Tangerang Selatan, Banten 15325",
+    "lat": "-6.2467524780807135",
+    "lng": "106.64918448625014"
   }
 ]
