@@ -30,6 +30,7 @@ window.closeModals = () => {
   if (window.location.hash.startsWith('#/')) {
     history.pushState("", document.title, window.location.pathname + window.location.search);
   }
+  document.title = "JAECOO Indonesia - From Classic, Beyond Classic";
 };
 
 window.openNewsDetail = (slug) => {

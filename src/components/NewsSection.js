@@ -54,6 +54,16 @@ export const renderArticleModal = (slug) => {
 
   const modal = document.getElementById('article-modal');
   
+  // Update Meta Tags for SEO (Client-Side)
+  document.title = `${article.title} - JAECOO Indonesia`;
+  let metaDesc = document.querySelector('meta[name="description"]');
+  if (!metaDesc) {
+    metaDesc = document.createElement('meta');
+    metaDesc.name = "description";
+    document.head.appendChild(metaDesc);
+  }
+  metaDesc.content = article.metaDescription || article.excerpt;
+
   modal.innerHTML = `
     <button class="detail-close-btn" onclick="window.closeModals()">
       <i data-lucide="x"></i>

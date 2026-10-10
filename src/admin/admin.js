@@ -256,7 +256,7 @@ function renderNewsTable() {
 function editNews(index) {
   const container = document.getElementById('content-area');
   const isNew = index === -1;
-  const news = isNew ? { title: '', category: 'NEWS', date: '', excerpt: '', content: '', image: '', slug: '', id: '' } : newsData[index];
+  const news = isNew ? { title: '', category: 'NEWS', date: '', excerpt: '', content: '', image: '', slug: '', metaDescription: '', id: '' } : newsData[index];
 
   container.innerHTML = `
     <div class="dashboard-card">
@@ -267,36 +267,81 @@ function editNews(index) {
           <button class="btn btn-primary" id="save-news-btn">Save Changes</button>
         </div>
       </div>
-      <div class="form-group"><label class="form-label">Title</label><input type="text" id="news-title" class="form-control" value="${news.title}"></div>
+      <div class="form-group" style="display: flex; gap: 20px;">
+        <div style="flex: 2"><label class="form-label">Title</label><input type="text" id="news-title" class="form-control" value="${news.title}"></div>
+        <div style="flex: 1"><label class="form-label">Slug</label><input type="text" id="news-slug" class="form-control" value="${news.slug || ''}" placeholder="auto-generated if empty"></div>
+      </div>
+      <div class="form-group"><label class="form-label">Meta Description</label><textarea id="news-meta" class="form-control" style="min-height: 60px;" placeholder="Tuliskan deksripsi singkat untuk SEO...">${news.metaDescription || ''}</textarea></div>
       <div class="form-group" style="display: flex; gap: 20px;">
         <div style="flex: 1"><label class="form-label">Category</label><input type="text" id="news-cat" class="form-control" value="${news.category}"></div>
         <div style="flex: 1"><label class="form-label">Date</label><input type="text" id="news-date" class="form-control" value="${news.date}" placeholder="e.g. 14 September 2026"></div>
       </div>
-      <div class="form-group"><label class="form-label">Image URL</label>
-        <div style="display:flex;gap:5px;"><input type="text" id="news-img" class="form-control" value="${news.image}"><button class="btn btn-outline" style="padding:0 10px;" id="upload-news-img">Upload</button></div>
+      <div class="form-group"><label class="form-label">Cover Image</label>
+        <div style="display:flex;gap:5px;"><input type="text" id="news-img" class="form-control" value="${news.image}"><button class="btn btn-outline upload-btn" style="padding:0 10px;" data-target="news-img">Upload</button></div>
       </div>
-      <div class="form-group"><label class="form-label">Excerpt</label><textarea id="news-excerpt" class="form-control" style="min-height: 60px;">${news.excerpt}</textarea></div>
-      <div class="form-group"><label class="form-label">Content (HTML allowed)</label><textarea id="news-content" class="form-control" style="min-height: 200px;">${news.content}</textarea></div>
+      <div class="form-group"><label class="form-label">Excerpt (Singkat)</label><textarea id="news-excerpt" class="form-control" style="min-height: 60px;">${news.excerpt}</textarea></div>
+      
+      <div class="form-group">
+        <label class="form-label">Content (Isiannya)</label>
+        <div class="wysiwyg-toolbar" style="display:flex; gap:5px; margin-bottom:5px; background: rgba(255,255,255,0.05); padding: 5px; border-radius: 4px; flex-wrap: wrap;">
+          <button type="button" class="rtf-btn" data-cmd="bold" style="padding: 4px 10px; background: #333; color: white; border: 1px solid #555; border-radius: 4px; cursor: pointer;"><b>B</b></button>
+          <button type="button" class="rtf-btn" data-cmd="italic" style="padding: 4px 10px; background: #333; color: white; border: 1px solid #555; border-radius: 4px; cursor: pointer;"><i>I</i></button>
+          <button type="button" class="rtf-btn" data-cmd="formatBlock" data-val="H1" style="padding: 4px 10px; background: #333; color: white; border: 1px solid #555; border-radius: 4px; cursor: pointer;">H1</button>
+          <button type="button" class="rtf-btn" data-cmd="formatBlock" data-val="H2" style="padding: 4px 10px; background: #333; color: white; border: 1px solid #555; border-radius: 4px; cursor: pointer;">H2</button>
+          <button type="button" class="rtf-btn" data-cmd="formatBlock" data-val="H3" style="padding: 4px 10px; background: #333; color: white; border: 1px solid #555; border-radius: 4px; cursor: pointer;">H3</button>
+          <button type="button" class="rtf-btn" data-cmd="formatBlock" data-val="H4" style="padding: 4px 10px; background: #333; color: white; border: 1px solid #555; border-radius: 4px; cursor: pointer;">H4</button>
+          <button type="button" class="rtf-btn" data-cmd="insertOrderedList" style="padding: 4px 10px; background: #333; color: white; border: 1px solid #555; border-radius: 4px; cursor: pointer;">1. List</button>
+          <button type="button" class="rtf-btn" data-cmd="insertUnorderedList" style="padding: 4px 10px; background: #333; color: white; border: 1px solid #555; border-radius: 4px; cursor: pointer;">• List</button>
+          <button type="button" class="rtf-btn" data-cmd="createLink" style="padding: 4px 10px; background: #333; color: white; border: 1px solid #555; border-radius: 4px; cursor: pointer;">Link</button>
+          <button type="button" class="rtf-btn" data-cmd="insertImage" style="padding: 4px 10px; background: #333; color: white; border: 1px solid #555; border-radius: 4px; cursor: pointer;">Image</button>
+        </div>
+        <div id="news-content-editor" class="form-control" contenteditable="true" style="min-height: 300px; background: rgba(0,0,0,0.2); overflow-y:auto; padding:15px; color: #fff;">${news.content || ''}</div>
+      </div>
     </div>
   `;
 
   document.getElementById('cancel-news-btn').addEventListener('click', () => initNewsTab());
   document.getElementById('save-news-btn').addEventListener('click', () => saveNews(index));
-  document.getElementById('upload-news-img').addEventListener('click', () => uploadToInput('news-img'));
+  
+  // Attach upload event for the news image
+  container.querySelectorAll('.upload-btn').forEach(btn => {
+    btn.addEventListener('click', () => uploadToInput(btn.dataset.target));
+  });
+
+  // Attach Rich Text Editor Toolbar Events
+  container.querySelectorAll('.rtf-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const cmd = btn.dataset.cmd;
+      const val = btn.dataset.val;
+      if (cmd === 'createLink') {
+        const url = prompt('Enter link URL:');
+        if (url) document.execCommand(cmd, false, url);
+      } else if (cmd === 'insertImage') {
+        const url = prompt('Enter image URL:');
+        if (url) document.execCommand(cmd, false, url);
+      } else {
+        document.execCommand(cmd, false, val || null);
+      }
+      document.getElementById('news-content-editor').focus();
+    });
+  });
 }
 
 async function saveNews(index) {
   const title = document.getElementById('news-title').value;
-  const slug = title.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+  let slug = document.getElementById('news-slug').value.trim();
+  if (!slug) slug = title.toLowerCase().replace(/[^a-z0-9]+/g, '-');
   
   const updatedNews = {
     id: index === -1 ? slug : newsData[index].id,
     slug,
+    metaDescription: document.getElementById('news-meta').value,
     category: document.getElementById('news-cat').value,
     date: document.getElementById('news-date').value,
     title,
     excerpt: document.getElementById('news-excerpt').value,
-    content: document.getElementById('news-content').value,
+    content: document.getElementById('news-content-editor').innerHTML, // Use RTF editor content
     image: document.getElementById('news-img').value,
     readTime: index === -1 ? "3 min read" : newsData[index].readTime
   };
