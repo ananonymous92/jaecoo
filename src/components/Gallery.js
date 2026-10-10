@@ -1,8 +1,8 @@
 export const renderGallery = (t, galleryData = []) => {
   const section = document.getElementById('gallery');
   
-  // Extract unique categories
-  const categories = ['ALL', ...new Set(galleryData.map(item => item.category))];
+  // Extract unique categories (normalized to uppercase)
+  const categories = ['ALL', ...new Set(galleryData.map(item => (item.category || '').toUpperCase()))];
 
   section.innerHTML = `
     <div class="container">
@@ -19,10 +19,10 @@ export const renderGallery = (t, galleryData = []) => {
 
       <div class="gallery-grid" id="gallery-grid">
         ${galleryData.map((item, i) => `
-          <div class="gallery-item reveal-on-scroll" data-category="${item.category}" data-index="${i}" style="transition-delay: ${0.05 * (i % 6)}s">
+          <div class="gallery-item reveal-on-scroll" data-category="${(item.category || '').toUpperCase()}" data-index="${i}" style="transition-delay: ${0.05 * (i % 6)}s">
             <img src="${item.thumb}" alt="${item.title}" class="gallery-img" loading="lazy">
             <div class="gallery-overlay">
-              <span class="gallery-item-category">${item.category}</span>
+              <span class="gallery-item-category">${(item.category || '').toUpperCase()}</span>
               <h4 class="gallery-item-title">${item.title}</h4>
             </div>
           </div>
@@ -87,7 +87,7 @@ export const initGalleryEvents = () => {
         }
       });
       
-      currentFilteredList = filter === 'ALL' ? galleryData : galleryData.filter(d => d.category === filter);
+      currentFilteredList = filter === 'ALL' ? galleryData : galleryData.filter(d => (d.category || '').toUpperCase() === filter);
     });
   });
 
