@@ -18,7 +18,7 @@ export const renderFooter = (t, settings = {}) => {
       <div class="footer-top">
         <!-- Col 1 -->
         <div class="footer-col-1">
-          <div class="footer-logo">JAECOO</div>
+          <img src="/images/logo.png" alt="JAECOO" class="footer-logo" style="height: 24px; width: auto; filter: brightness(0) invert(1);" onerror="this.outerHTML='<div class=\\'footer-logo\\'>JAECOO</div>'">
           <p class="footer-desc">${t.footer.desc}</p>
         </div>
         
