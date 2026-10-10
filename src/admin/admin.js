@@ -318,8 +318,42 @@ function editNews(index) {
         const url = prompt('Enter link URL:');
         if (url) document.execCommand(cmd, false, url);
       } else if (cmd === 'insertImage') {
-        const url = prompt('Enter image URL:');
-        if (url) document.execCommand(cmd, false, url);
+        // Save current selection to restore after async upload
+        let savedRange = null;
+        const sel = window.getSelection();
+        if (sel.rangeCount > 0) {
+          savedRange = sel.getRangeAt(0);
+        }
+
+        const input = document.createElement('input');
+        input.type = 'file';
+        input.accept = 'image/*';
+        input.onchange = async (ev) => {
+          const file = ev.target.files[0];
+          if (!file) return;
+          try {
+            const editor = document.getElementById('news-content-editor');
+            editor.focus();
+            if (savedRange) {
+              const s = window.getSelection();
+              s.removeAllRanges();
+              s.addRange(savedRange);
+            }
+            
+            const data = await adminApi.upload(file);
+            
+            editor.focus();
+            if (savedRange) {
+              const s = window.getSelection();
+              s.removeAllRanges();
+              s.addRange(savedRange);
+            }
+            document.execCommand('insertImage', false, data.url);
+          } catch (err) {
+            alert('Upload error: ' + err.message);
+          }
+        };
+        input.click();
       } else {
         document.execCommand(cmd, false, val || null);
       }
