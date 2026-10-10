@@ -18,8 +18,14 @@
 
   <!-- Theme Initialization -->
   <script>
-    const savedTheme = localStorage.getItem('jaecoo-theme') || 'dark';
-    document.documentElement.setAttribute('data-theme', savedTheme);
+    let defaultTheme = 'dark';
+    const hour = new Date().getHours();
+    if (hour >= 6 && hour < 18) {
+      defaultTheme = 'light';
+    }
+    const savedTheme = localStorage.getItem('jaecoo-theme');
+    const themeToApply = savedTheme ? savedTheme : defaultTheme;
+    document.documentElement.setAttribute('data-theme', themeToApply);
   </script>
 
   <!-- Schema Markup / JSON-LD for Local Business -->
